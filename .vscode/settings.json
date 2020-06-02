@@ -1,0 +1,19 @@
+{
+  "cSpell.words": [
+    "destructure",
+    "heaslip",
+    "tsdoc",
+    "unscoped"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "files.associations": {
+    "api-extractor.json": "jsonc"
+  }
+}
