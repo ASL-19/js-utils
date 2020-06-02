@@ -2,14 +2,13 @@
 # yarn lockfile v1
 
 
-"@asl-19/eslint-config-typescript@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@asl-19/eslint-config-typescript/-/eslint-config-typescript-0.4.3.tgz#3c8d70d279af8f98f15ab9c2b69de4da72104478"
-  integrity sha512-/mBKW9256JYvIWwh4BXAJtEMzgq5qe7z3mOD3/0gdMpS9InXrKoZbvR2SKf0f1K+INRpoud/8z8v3NzhnEtmxg==
+"@asl-19/eslint-config-typescript@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@asl-19/eslint-config-typescript/-/eslint-config-typescript-0.4.4.tgz#3fe390ae40806ef9f4283f91a1070fbf1ff220e8"
+  integrity sha512-149QBUfAT0+FeKU2IZpUvSzyT9FsKgbVNiziRa5mlQgdOt/daryzafkN+lhM9EmOQD6HbOzvcJRXpSetxf5fHQ==
   dependencies:
     eslint-config-airbnb-typescript "^7.2.1"
     eslint-config-prettier "^6.11.0"
-    typescript "^3.9.4"
 
 "@babel/code-frame@^7.0.0":
   version "7.10.1"
@@ -1768,11 +1767,6 @@ typescript@^3.9.3:
   version "3.9.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.3.tgz#d3ac8883a97c26139e42df5e93eeece33d610b8a"
   integrity sha512-D/wqnB2xzNFIcoBG9FG8cXRDjiqSTbG2wd8DMZeQyJlP1vfTkIxH4GKveWaEBYySKIg+USu+E+EDIR47SqnaMQ==
-
-typescript@^3.9.4:
-  version "3.9.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.4.tgz#5aa0a54904b51b96dfd67870ce2db70251802f10"
-  integrity sha512-9OL+r0KVHqsYVH7K18IBR9hhC82YwLNlpSZfQDupGcfg8goB9p/s/9Okcy+ztnTeHR2U68xq21/igW9xpoGTgA==
 
 typescript@~3.7.2:
   version "3.7.5"
