@@ -19,5 +19,8 @@ jobs:
     - name: Build
       run: yarn build
 
+    - name: Run API Extractor check
+      run: yarn api-extractor:check
+
     - name: Run ESLint
       run: yarn eslint

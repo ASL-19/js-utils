@@ -21,6 +21,7 @@
   "types": "types/js-utils.public.d.ts",
   "sideEffects": false,
   "scripts": {
+    "api-extractor:check": "api-extractor run --verbose",
     "api-extractor:update": "api-extractor run --local --verbose",
     "api-documenter:update": "api-documenter markdown --input-folder ./api-extractor --output-folder ./docs",
     "build": "tsc -p tsconfig-cjs.json && tsc -p tsconfig-esm.json",
