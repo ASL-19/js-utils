@@ -1,6 +1,6 @@
 {
   "name": "@asl-19/js-utils",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Shared JavaScript utility functions for ASL19 projects",
   "author": {
     "name": "Grant Heaslip",
