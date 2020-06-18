@@ -9,4 +9,5 @@
 export { default as cleanUrlQueryString } from "./cleanUrlQueryString";
 export { default as getRootRelativeUrl } from "./getRootRelativeUrl";
 export { default as isNullOrWhitespace } from "./isNullOrWhitespace";
+export { default as replaceArabicNumeralsWithPersianNumerals } from "./replaceArabicNumeralsWithPersianNumerals";
 export { default as underscoreCaseToCamelCase } from "./underscoreCaseToCamelCase";

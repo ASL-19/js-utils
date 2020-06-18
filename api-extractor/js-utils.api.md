@@ -14,6 +14,9 @@ export const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
 export const isNullOrWhitespace: (input: string) => boolean;
 
 // @public
+export const replaceArabicNumeralsWithPersianNumerals: (input: string) => string;
+
+// @public
 export const underscoreCaseToCamelCase: (underscoreCasedString: string) => string;
 
 

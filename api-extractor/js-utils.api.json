@@ -80,6 +80,27 @@
         },
         {
           "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!replaceArabicNumeralsWithPersianNumerals:var",
+          "docComment": "/**\n * Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "replaceArabicNumeralsWithPersianNumerals: "
+            },
+            {
+              "kind": "Content",
+              "text": "(input: string) => string"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "replaceArabicNumeralsWithPersianNumerals",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
           "canonicalReference": "@asl-19/js-utils!underscoreCaseToCamelCase:var",
           "docComment": "/**\n * Given an underscore-cased string, returns a camel-cased string.\n *\n * e.g.:\n *\n * - foo_bar → fooBar - foo → foo\n *\n * @public\n */\n",
           "excerptTokens": [
