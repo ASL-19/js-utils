@@ -15,5 +15,6 @@ These functions don’t rely on DOM, React, or React Native APIs.
 |  [cleanUrlQueryString](./js-utils.cleanurlquerystring.md) | Returns a URL with trailing "?" and "&amp;" characters removed.<!-- -->e.g.:<!-- -->- "/foo?" → "/foo" - "/foo?bar&amp;" → "/foo?bar" |
 |  [getRootRelativeUrl](./js-utils.getrootrelativeurl.md) | Given a fully-qualified URL, returns a root-relative URL.<!-- -->e.g.:<!-- -->- "https://asl19.org/" → "/" - "https://asl19.org/foo" → "/foo" |
 |  [isNullOrWhitespace](./js-utils.isnullorwhitespace.md) | Returns true if string is null, an empty string, or a string of whitespace characters. |
+|  [replaceArabicNumeralsWithPersianNumerals](./js-utils.replacearabicnumeralswithpersiannumerals.md) | Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals. |
 |  [underscoreCaseToCamelCase](./js-utils.underscorecasetocamelcase.md) | Given an underscore-cased string, returns a camel-cased string.<!-- -->e.g.:<!-- -->- foo\_bar → fooBar - foo → foo |
 
