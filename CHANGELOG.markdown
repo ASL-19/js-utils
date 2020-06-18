@@ -1,5 +1,11 @@
 # @asl-19/js-utils changelog
 
+## [0.2.0](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.2.0+is%3Aclosed) [2020-06-18]
+
+### Additions
+
+* Added replaceArabicNumeralsWithPersianNumerals function [[#12](https://github.com/ASL-19/js-utils/pull/12)]
+
 ## 0.1.11 [2020-06-02]
 
 ### Changes

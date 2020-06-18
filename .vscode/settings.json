@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "Perso",
     "destructure",
     "heaslip",
     "tsdoc",
@@ -15,5 +16,15 @@
   ],
   "files.associations": {
     "api-extractor.json": "jsonc"
+  },
+  "search.exclude": {
+    ".yarn/releases/**/*": true,
+    ".yarnrc": true,
+    "api-extractor/**/*": true,
+    "CHANGELOG": true,
+    "docs/**/*": true,
+    "LICENSE": true,
+    "types/**/*": true,
+    "yarn.lock": true
   }
 }

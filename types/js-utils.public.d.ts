@@ -41,6 +41,14 @@ export declare const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
 export declare const isNullOrWhitespace: (input: string) => boolean;
 
 /**
+ * Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian
+ * (Perso-Arabic) numerals.
+ *
+ * @public
+ */
+export declare const replaceArabicNumeralsWithPersianNumerals: (input: string) => string;
+
+/**
  * Given an underscore-cased string, returns a camel-cased string.
  *
  * e.g.:
