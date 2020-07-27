@@ -1,5 +1,6 @@
+.yalc/
 dist/
 node_modules/
 package/
 temp/
-.yalc/
+yalc.lock
