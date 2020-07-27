@@ -1,5 +1,7 @@
+require("@rushstack/eslint-patch/modern-module-resolution");
+
 const eslintConfig = {
-  extends: ["@asl-19/typescript"],
+  extends: ["@asl-19/eslint-config"],
   plugins: ["eslint-plugin-tsdoc"],
   rules: {
     "no-restricted-imports": "off",
@@ -7,4 +9,5 @@ const eslintConfig = {
   },
 };
 
+// eslint-disable-next-line functional/immutable-data
 module.exports = eslintConfig;
