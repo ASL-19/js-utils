@@ -3,6 +3,7 @@
     "Perso",
     "destructure",
     "heaslip",
+    "rushstack",
     "tsdoc",
     "unscoped"
   ],
@@ -26,5 +27,6 @@
     "LICENSE": true,
     "types/**/*": true,
     "yarn.lock": true
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
