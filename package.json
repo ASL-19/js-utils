@@ -31,11 +31,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@asl-19/eslint-config": "^0.2.0",
-    "@microsoft/api-documenter": "^7.8.21",
-    "@microsoft/api-extractor": "^7.9.2",
-    "eslint": "^7.5.0",
-    "prettier": "^2.0.5",
-    "typescript": "^3.9.7"
+    "@asl-19/eslint-config": "^0.3.0",
+    "@microsoft/api-documenter": "^7.9.15",
+    "@microsoft/api-extractor": "^7.10.4",
+    "eslint": "^7.11.0",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
   }
 }
