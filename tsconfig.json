@@ -10,9 +10,5 @@
     "outDir": "dist/cjs",
     "target": "es2015"
   },
-  "include": [
-    "src/**/*",
-    "*.js",
-    ".eslintrc.js",
-  ],
+  "include": ["src/**/*", "*.js", ".eslintrc.js"]
 }
