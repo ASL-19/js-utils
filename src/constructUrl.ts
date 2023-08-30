@@ -1,9 +1,9 @@
 /**
- * 
+ *
  * Given path and querySegments. Return url with query parameters
- * 
+ *
  * @public
- * 
+ *
  */
 
 import { match, P } from "ts-pattern";
