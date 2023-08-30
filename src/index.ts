@@ -16,3 +16,5 @@ export { default as getAbsoluteUrl } from "./getAbsoluteUrl";
 export { default as getFirstStringOrString } from "./getFirstStringOrString";
 export { default as getObjectValueByDotSeparatedKey } from "./getObjectValueByDotSeparatedKey";
 export { default as logError } from "./logError";
+export { default as constructUrl } from "./constructUrl";
+export { default as getNormalizedQuery } from "./getNormalizedQuery";

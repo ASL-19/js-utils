@@ -6,6 +6,8 @@
  * @packageDocumentation
  */
 
+import { ParsedUrlQuery } from 'querystring';
+
 /**
  *
  * Cast an object to a specified data type
@@ -28,6 +30,20 @@ export declare const asType: <T>(value: T) => T;
  * @public
  */
 export declare const cleanUrlQueryString: (url: string) => string;
+
+/**
+ *
+ * Given path and querySegments. Return url with query parameters
+ *
+ * @public
+ *
+ */
+export declare const constructUrl: ({ path, querySegments, }: {
+    path: string;
+    querySegments?: {
+        [key: string]: string | number;
+    };
+}) => string;
 
 /**
  *
@@ -57,6 +73,51 @@ export declare const getAbsoluteUrl: ({ rootRelativeUrl, webPublicUrl, }: {
  * @public
  */
 export declare const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string;
+
+/**
+ * Returns a normalized representation of the passed query with default values.
+ *
+ * Query values are converted to number if the corresponding default value is a
+ * number; otherwise they will be typed string.
+ *
+ * @remarks
+ * 1. It’s important to normalize the query before use because the
+ *    ParsedUrlQuery exposed by Next.js in getServerSideProps and
+ *    useRouter().query can be an array if multiple query string parameters with
+ *    the same key are in the URL. e.g.:
+ *
+ *    - `?rating=true` → `{rating: "true"}`;
+ *    - `?rating=true&rating=false` → `{rating: ["true", false"]}`
+ *
+ *    This is easy to forget, but could cause runtime errors.
+ *
+ * 2. In the future the aforementioned defaults-driven auto-conversion may also
+ *    support arrays of strings and arrays of numbers to support use cases like
+ *    law_database_web’s multi-tag select).
+ *
+ * @public
+ */
+export declare const getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
+    defaults: NormalizedQueryType;
+    query: ParsedUrlQuery;
+    /**
+     * An object with the non-null/undefined type names of each normalized query
+     * parameter (`"number"` or `"string"`).
+     *
+     * TypeScript will automatically suggest the correct type for each parameter.
+     *
+     * @remarks
+     * This is needed because this function needs to know the expected type of
+     * each query string parameter at runtime (TypeScript types like
+     * `NormalizedQueryType` aren’t accessible in TypeScript/JavaScript logic).
+     *
+     * Previously this function used the type of the corresponding `defaults`
+     * value to determine if the value should be converted to a number, however
+     * this isn’t compatible with parameters with `null`/`undefined` default
+     * values.
+     */
+    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
+}) => NormalizedQueryType;
 
 /**
  *

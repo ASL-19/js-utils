@@ -220,6 +220,29 @@
         },
         {
           "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!constructUrl:var",
+          "docComment": "/**\n * Given path and querySegments. Return url with query parameters\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "constructUrl: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ path, querySegments, }: {\n    path: string;\n    querySegments?: {\n        [key: string]: string | number;\n    };\n}) => string"
+            }
+          ],
+          "fileUrlPath": "src/constructUrl.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "constructUrl",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
           "canonicalReference": "@asl-19/js-utils!getAbsoluteUrl:var",
           "docComment": "/**\n * Given an URL that isn’t root-relative (starting with \"/\" and return the absoluteUrl with current active web url\n *\n * e.g.:\n *\n * - \"/foo\",\"https://hello.com\" → \"https://hello.com/foo\"\n *\n * @public\n */\n",
           "excerptTokens": [
@@ -271,6 +294,47 @@
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 4
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!getNormalizedQuery:var",
+          "docComment": "/**\n * Returns a normalized representation of the passed query with default values.\n *\n * Query values are converted to number if the corresponding default value is a number; otherwise they will be typed string.\n *\n * @remarks\n *\n * 1. It’s important to normalize the query before use because the ParsedUrlQuery exposed by Next.js in getServerSideProps and useRouter().query can be an array if multiple query string parameters with the same key are in the URL. e.g.:\n *\n * - `?rating=true` → `{rating: \"true\"}`; - `?rating=true&rating=false` → `{rating: [\"true\", false\"]}`\n *\n * This is easy to forget, but could cause runtime errors.\n *\n * 2. In the future the aforementioned defaults-driven auto-conversion may also support arrays of strings and arrays of numbers to support use cases like law_database_web’s multi-tag select).\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getNormalizedQuery: "
+            },
+            {
+              "kind": "Content",
+              "text": "<NormalizedQueryType>({ defaults, query, types, }: {\n    defaults: NormalizedQueryType;\n    query: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ParsedUrlQuery",
+              "canonicalReference": "!\"\\\"querystring\\\"\".ParsedUrlQuery:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    types: { [queryParameterName in keyof NormalizedQueryType]: "
+            },
+            {
+              "kind": "Reference",
+              "text": "NonNullable",
+              "canonicalReference": "!NonNullable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<NormalizedQueryType[queryParameterName]> extends number ? \"number\" : \"string\"; };\n}) => NormalizedQueryType"
+            }
+          ],
+          "fileUrlPath": "src/getNormalizedQuery.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "getNormalizedQuery",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
           }
         },
         {

@@ -7,5 +7,4 @@ const eslintConfig = {
   },
 };
 
-// eslint-disable-next-line functional/immutable-data
 module.exports = eslintConfig;
