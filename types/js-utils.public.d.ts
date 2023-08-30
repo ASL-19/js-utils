@@ -6,6 +6,14 @@
  * @packageDocumentation
  */
 
+/**
+ *
+ * Cast an object to a specified data type
+ *
+ * @public
+ *
+ */
+export declare const asType: <T>(value: T) => T;
 
 /**
  * Returns a URL with trailing "?" and "&" characters removed.
@@ -20,6 +28,50 @@
  * @public
  */
 export declare const cleanUrlQueryString: (url: string) => string;
+
+/**
+ *
+ * Given an URL that isn’t root-relative (starting with "/"
+ * and return the absoluteUrl with current active web url
+ *
+ * e.g.:
+ *
+ * - "/foo","https://hello.com" → "https://hello.com/foo"
+ *
+ * @public
+ *
+ */
+export declare const getAbsoluteUrl: ({ rootRelativeUrl, webPublicUrl, }: {
+    rootRelativeUrl: string;
+    webPublicUrl: string;
+}) => string;
+
+/**
+ *
+ * Given an array or a string, return its first string element
+ *
+ * * e.g.:
+ *
+ * - ["foo1","foo2"] → "foo"
+ *
+ * @public
+ */
+export declare const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string;
+
+/**
+ *
+ * e.g.:
+ *
+ * - dotSeparatedKey: "error1.error2",
+ *   object: \{ error1:"internet error"; error2: "loading error" \}
+ *   → ["internet error", "loading error"]
+ *
+ * @public
+ */
+export declare const getObjectValueByDotSeparatedKey: ({ dotSeparatedKey, object, }: {
+    dotSeparatedKey: string;
+    object: object;
+}) => object;
 
 /**
  * Given a fully-qualified URL, returns a root-relative URL.
@@ -39,6 +91,18 @@ export declare const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
  * @public
  */
 export declare const isNullOrWhitespace: (input: string) => boolean;
+
+/**
+ *
+ * Given status code, description and url; console out the error message
+ *
+ * @public
+ */
+export declare const logError: ({ description, statusCode, url, }: {
+    description: string;
+    statusCode: number;
+    url: string;
+}) => void;
 
 /**
  * Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian

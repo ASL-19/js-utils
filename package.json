@@ -10,7 +10,7 @@
   "license": "GPL-3.0-or-later",
   "repository": "ASL-19/js-utils",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 18"
   },
   "files": [
     "dist/**/*.js",
@@ -29,7 +29,10 @@
     "eslint": "eslint . --ext js,ts",
     "prepublishOnly": "yarn build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "querystring": "^0.2.1",
+    "ts-pattern": "^5.0.5"
+  },
   "devDependencies": {
     "@asl-19/eslint-config": "^0.3.0",
     "@microsoft/api-documenter": "^7.9.15",

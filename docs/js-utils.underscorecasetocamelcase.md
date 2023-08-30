@@ -10,7 +10,7 @@ e.g.:
 
 - foo\_bar → fooBar - foo → foo
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 underscoreCaseToCamelCase: (underscoreCasedString: string) => string

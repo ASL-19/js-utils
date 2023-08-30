@@ -5,7 +5,25 @@
 ```ts
 
 // @public
+export const asType: <T>(value: T) => T;
+
+// @public
 export const cleanUrlQueryString: (url: string) => string;
+
+// @public
+export const getAbsoluteUrl: ({ rootRelativeUrl, webPublicUrl, }: {
+    rootRelativeUrl: string;
+    webPublicUrl: string;
+}) => string;
+
+// @public
+export const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string;
+
+// @public
+export const getObjectValueByDotSeparatedKey: ({ dotSeparatedKey, object, }: {
+    dotSeparatedKey: string;
+    object: object;
+}) => object;
 
 // @public
 export const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
@@ -14,10 +32,16 @@ export const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
 export const isNullOrWhitespace: (input: string) => boolean;
 
 // @public
+export const logError: ({ description, statusCode, url, }: {
+    description: string;
+    statusCode: number;
+    url: string;
+}) => void;
+
+// @public
 export const replaceArabicNumeralsWithPersianNumerals: (input: string) => string;
 
 // @public
 export const underscoreCaseToCamelCase: (underscoreCasedString: string) => string;
-
 
 ```

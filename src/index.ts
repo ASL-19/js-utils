@@ -11,3 +11,8 @@ export { default as getRootRelativeUrl } from "./getRootRelativeUrl";
 export { default as isNullOrWhitespace } from "./isNullOrWhitespace";
 export { default as replaceArabicNumeralsWithPersianNumerals } from "./replaceArabicNumeralsWithPersianNumerals";
 export { default as underscoreCaseToCamelCase } from "./underscoreCaseToCamelCase";
+export { default as asType } from "./asType";
+export { default as getAbsoluteUrl } from "./getAbsoluteUrl";
+export { default as getFirstStringOrString } from "./getFirstStringOrString";
+export { default as getObjectValueByDotSeparatedKey } from "./getObjectValueByDotSeparatedKey";
+export { default as logError } from "./logError";

@@ -1,20 +1,200 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.10.4",
-    "schemaVersion": 1003,
-    "oldestForwardsCompatibleVersion": 1001
+    "toolVersion": "7.36.4",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
   },
   "kind": "Package",
   "canonicalReference": "@asl-19/js-utils!",
   "docComment": "/**\n * A collection of plain JavaScript utility functions for ASL19 projects.\n *\n * These functions don’t rely on DOM, React, or React Native APIs.\n *\n * @packageDocumentation\n */\n",
   "name": "@asl-19/js-utils",
+  "preserveMemberOrder": false,
   "members": [
     {
       "kind": "EntryPoint",
       "canonicalReference": "@asl-19/js-utils!",
       "name": "",
+      "preserveMemberOrder": false,
       "members": [
+        {
+          "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!asType:var",
+          "docComment": "/**\n * Cast an object to a specified data type\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "asType: "
+            },
+            {
+              "kind": "Content",
+              "text": "<T>(value: T) => T"
+            }
+          ],
+          "fileUrlPath": "src/asType.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "asType",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
         {
           "kind": "Variable",
           "canonicalReference": "@asl-19/js-utils!cleanUrlQueryString:var",
@@ -29,8 +209,88 @@
               "text": "(url: string) => string"
             }
           ],
+          "fileUrlPath": "src/cleanUrlQueryString.ts",
+          "isReadonly": true,
           "releaseTag": "Public",
           "name": "cleanUrlQueryString",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!getAbsoluteUrl:var",
+          "docComment": "/**\n * Given an URL that isn’t root-relative (starting with \"/\" and return the absoluteUrl with current active web url\n *\n * e.g.:\n *\n * - \"/foo\",\"https://hello.com\" → \"https://hello.com/foo\"\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getAbsoluteUrl: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ rootRelativeUrl, webPublicUrl, }: {\n    rootRelativeUrl: string;\n    webPublicUrl: string;\n}) => string"
+            }
+          ],
+          "fileUrlPath": "src/getAbsoluteUrl.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "getAbsoluteUrl",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!getFirstStringOrString:var",
+          "docComment": "/**\n * Given an array or a string, return its first string element\n *\n * * e.g.:\n *\n * - [\"foo1\",\"foo2\"] → \"foo\"\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getFirstStringOrString: "
+            },
+            {
+              "kind": "Content",
+              "text": "(arrayOrString?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Array",
+              "canonicalReference": "!Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<string> | string) => string"
+            }
+          ],
+          "fileUrlPath": "src/getFirstStringOrString.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "getFirstStringOrString",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!getObjectValueByDotSeparatedKey:var",
+          "docComment": "/**\n * e.g.:\n *\n * - dotSeparatedKey: \"error1.error2\", object: \\{ error1:\"internet error\"; error2: \"loading error\" \\} → [\"internet error\", \"loading error\"]\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getObjectValueByDotSeparatedKey: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ dotSeparatedKey, object, }: {\n    dotSeparatedKey: string;\n    object: object;\n}) => object"
+            }
+          ],
+          "fileUrlPath": "src/getObjectValueByDotSeparatedKey.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "getObjectValueByDotSeparatedKey",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
@@ -50,6 +310,8 @@
               "text": "(fullyQualifiedUrl: string) => string"
             }
           ],
+          "fileUrlPath": "src/getRootRelativeUrl.ts",
+          "isReadonly": true,
           "releaseTag": "Public",
           "name": "getRootRelativeUrl",
           "variableTypeTokenRange": {
@@ -71,8 +333,33 @@
               "text": "(input: string) => boolean"
             }
           ],
+          "fileUrlPath": "src/isNullOrWhitespace.ts",
+          "isReadonly": true,
           "releaseTag": "Public",
           "name": "isNullOrWhitespace",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!logError:var",
+          "docComment": "/**\n * Given status code, description and url; console out the error message\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "logError: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ description, statusCode, url, }: {\n    description: string;\n    statusCode: number;\n    url: string;\n}) => void"
+            }
+          ],
+          "fileUrlPath": "src/logError.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "logError",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
@@ -92,6 +379,8 @@
               "text": "(input: string) => string"
             }
           ],
+          "fileUrlPath": "src/replaceArabicNumeralsWithPersianNumerals.ts",
+          "isReadonly": true,
           "releaseTag": "Public",
           "name": "replaceArabicNumeralsWithPersianNumerals",
           "variableTypeTokenRange": {
@@ -113,6 +402,8 @@
               "text": "(underscoreCasedString: string) => string"
             }
           ],
+          "fileUrlPath": "src/underscoreCaseToCamelCase.ts",
+          "isReadonly": true,
           "releaseTag": "Public",
           "name": "underscoreCaseToCamelCase",
           "variableTypeTokenRange": {

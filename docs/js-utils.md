@@ -12,9 +12,9 @@ These functions don’t rely on DOM, React, or React Native APIs.
 
 |  Variable | Description |
 |  --- | --- |
-|  [cleanUrlQueryString](./js-utils.cleanurlquerystring.md) | Returns a URL with trailing "?" and "&amp;" characters removed.<!-- -->e.g.:<!-- -->- "/foo?" → "/foo" - "/foo?bar&amp;" → "/foo?bar" |
-|  [getRootRelativeUrl](./js-utils.getrootrelativeurl.md) | Given a fully-qualified URL, returns a root-relative URL.<!-- -->e.g.:<!-- -->- "https://asl19.org/" → "/" - "https://asl19.org/foo" → "/foo" |
+|  [cleanUrlQueryString](./js-utils.cleanurlquerystring.md) | <p>Returns a URL with trailing "?" and "&amp;" characters removed.</p><p>e.g.:</p><p>- "/foo?" → "/foo" - "/foo?bar&amp;" → "/foo?bar"</p> |
+|  [getRootRelativeUrl](./js-utils.getrootrelativeurl.md) | <p>Given a fully-qualified URL, returns a root-relative URL.</p><p>e.g.:</p><p>- "https://asl19.org/" → "/" - "https://asl19.org/foo" → "/foo"</p> |
 |  [isNullOrWhitespace](./js-utils.isnullorwhitespace.md) | Returns true if string is null, an empty string, or a string of whitespace characters. |
 |  [replaceArabicNumeralsWithPersianNumerals](./js-utils.replacearabicnumeralswithpersiannumerals.md) | Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals. |
-|  [underscoreCaseToCamelCase](./js-utils.underscorecasetocamelcase.md) | Given an underscore-cased string, returns a camel-cased string.<!-- -->e.g.:<!-- -->- foo\_bar → fooBar - foo → foo |
+|  [underscoreCaseToCamelCase](./js-utils.underscorecasetocamelcase.md) | <p>Given an underscore-cased string, returns a camel-cased string.</p><p>e.g.:</p><p>- foo\_bar → fooBar - foo → foo</p> |
 

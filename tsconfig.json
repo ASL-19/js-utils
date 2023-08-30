@@ -4,11 +4,11 @@
     "declarationMap": true,
     "esModuleInterop": true,
     "jsx": "preserve",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "module": "esnext",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "dist/cjs",
-    "target": "ES5"
+    "target": "es2015"
   },
   "include": [
     "src/**/*",

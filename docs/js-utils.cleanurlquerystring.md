@@ -10,7 +10,7 @@ e.g.:
 
 - "/foo?" → "/foo" - "/foo?bar&amp;" → "/foo?bar"
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 cleanUrlQueryString: (url: string) => string

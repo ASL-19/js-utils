@@ -10,7 +10,7 @@ e.g.:
 
 - "https://asl19.org/" → "/" - "https://asl19.org/foo" → "/foo"
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 getRootRelativeUrl: (fullyQualifiedUrl: string) => string
