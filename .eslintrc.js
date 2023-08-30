@@ -8,7 +8,7 @@ const eslintConfig = {
     "@asl-19/eslint-config/typescript",
   ],
   rules: {
-    "no-restricted-imports": "warning",
+    "no-restricted-imports": "warn",
   },
 };
 
