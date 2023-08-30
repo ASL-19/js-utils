@@ -6,12 +6,19 @@
 
 Given an underscore-cased string, returns a camel-cased string.
 
-e.g.:
-
-- foo\_bar → fooBar - foo → foo
-
 **Signature:**
 
 ```typescript
 underscoreCaseToCamelCase: (underscoreCasedString: string) => string
 ```
+
+## Example
+
+
+```ts
+- underscoreCaseToCamelCase("foo_bar")
+// "fooBar"
+- underscoreCaseToCamelCase("foo")
+// "foo"
+```
+

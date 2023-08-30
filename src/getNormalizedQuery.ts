@@ -6,10 +6,11 @@ import getFirstStringOrString from "./getFirstStringOrString";
 /**
  * Returns a normalized representation of the passed query with default values.
  *
+ * @remarks
+ *
  * Query values are converted to number if the corresponding default value is a
  * number; otherwise they will be typed string.
  *
- * @remarks
  * 1. It’s important to normalize the query before use because the
  *    ParsedUrlQuery exposed by Next.js in getServerSideProps and
  *    useRouter().query can be an array if multiple query string parameters with
@@ -18,15 +19,14 @@ import getFirstStringOrString from "./getFirstStringOrString";
  *    - `?rating=true` → `{rating: "true"}`;
  *    - `?rating=true&rating=false` → `{rating: ["true", false"]}`
  *
- *    This is easy to forget, but could cause runtime errors.   
+ *    This is easy to forget, but could cause runtime errors.
  *
  * 2. In the future the aforementioned defaults-driven auto-conversion may also
  *    support arrays of strings and arrays of numbers to support use cases like
  *    law_database_web’s multi-tag select).
- * 
+ *
  * @public
  */
-
 const getNormalizedQuery = <NormalizedQueryType>({
   defaults,
   query,

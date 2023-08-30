@@ -16,18 +16,18 @@ export const cleanUrlQueryString: (url: string) => string;
 export const constructUrl: ({ path, querySegments, }: {
     path: string;
     querySegments?: {
-        [key: string]: string | number;
-    };
+        [key: string]: string | number | null | undefined;
+    } | undefined;
 }) => string;
 
 // @public
-export const getAbsoluteUrl: ({ rootRelativeUrl, webPublicUrl, }: {
+export const getAbsoluteUrl: ({ protocolAndHost, rootRelativeUrl, }: {
+    protocolAndHost: string;
     rootRelativeUrl: string;
-    webPublicUrl: string;
 }) => string;
 
 // @public
-export const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string;
+export const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string | undefined;
 
 // @public
 export const getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {

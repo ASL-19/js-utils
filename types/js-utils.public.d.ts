@@ -9,21 +9,24 @@
 import { ParsedUrlQuery } from 'querystring';
 
 /**
- *
- * Cast an object to a specified data type
+ * Cast an object to a specified data type.
  *
  * @public
- *
  */
 export declare const asType: <T>(value: T) => T;
 
 /**
- * Returns a URL with trailing "?" and "&" characters removed.
+ * Returns a URL with trailing `"?"` and `"&"` characters removed.
  *
- * e.g.:
+ * @example
  *
- * - "/foo?" → "/foo"
- * - "/foo?bar&" → "/foo?bar"
+ * ```ts
+ * cleanUrlQueryString("/foo?")
+ * // "/foo"
+ *
+ * cleanUrlQueryString("/foo?bar&")
+ * // "/foo?bar"
+ * ```
  *
  * @param url - URL
  *
@@ -32,55 +35,81 @@ export declare const asType: <T>(value: T) => T;
 export declare const cleanUrlQueryString: (url: string) => string;
 
 /**
- *
- * Given path and querySegments. Return url with query parameters
+ * Format a root-relative URL based on provided path and query string key-value
+ * pairs.
  *
  * @public
- *
  */
 export declare const constructUrl: ({ path, querySegments, }: {
     path: string;
     querySegments?: {
-        [key: string]: string | number;
-    };
+        [key: string]: string | number | null | undefined;
+    } | undefined;
 }) => string;
 
 /**
+ * Given provided protocol + host string and root-relative URL string returns an
+ * absolute (fully-qualified) URL.
  *
- * Given an URL that isn’t root-relative (starting with "/"
- * and return the absoluteUrl with current active web url
+ * @remarks
  *
- * e.g.:
+ * - `protocolAndHost` should look like `"https://asl19.org"`, with no trailing
+ *   slash. In ASL19 Next.js projects this is probably
+ *   `process.env.NEXT_PUBLIC_WEB_URL`.
+ * - `rootRelativeUrl` should start with `"/"`.
  *
- * - "/foo","https://hello.com" → "https://hello.com/foo"
+ * @example
+ *
+ * ```ts
+ * getAbsoluteUrl({
+ *  protocolAndHost: "https://hello.com",
+ *  rootRelativeUrl: "/foo",
+ * })
+ * // "https://hello.com/foo"
+ * ```
  *
  * @public
- *
  */
-export declare const getAbsoluteUrl: ({ rootRelativeUrl, webPublicUrl, }: {
+export declare const getAbsoluteUrl: ({ protocolAndHost, rootRelativeUrl, }: {
+    protocolAndHost: string;
     rootRelativeUrl: string;
-    webPublicUrl: string;
 }) => string;
 
 /**
  *
- * Given an array or a string, return its first string element
+ * Given an array or a string, return its first string element.
  *
- * * e.g.:
+ * @remarks
  *
- * - ["foo1","foo2"] → "foo"
+ * This is useful for normalizing Next.js `router.query` (`ParsedUrlQuery`)
+ * values, which can be either a string or an array of strings.
+ *
+ * If possible you should use {@link getNormalizedQuery} (which uses this
+ * function internally) for this, but there may be special cases where it makes
+ * sense to use this function directly.
+ *
+ * @example
+ *
+ * ```ts
+ * getFirstStringOrString(["foo1","foo2"])
+ * // "foo1"
+ *
+ * getFirstStringOrString("foo1")
+ * // "foo1"
+ * ```
  *
  * @public
  */
-export declare const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string;
+export declare const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string | undefined;
 
 /**
  * Returns a normalized representation of the passed query with default values.
  *
+ * @remarks
+ *
  * Query values are converted to number if the corresponding default value is a
  * number; otherwise they will be typed string.
  *
- * @remarks
  * 1. It’s important to normalize the query before use because the
  *    ParsedUrlQuery exposed by Next.js in getServerSideProps and
  *    useRouter().query can be an array if multiple query string parameters with
@@ -120,12 +149,22 @@ export declare const getNormalizedQuery: <NormalizedQueryType>({ defaults, query
 }) => NormalizedQueryType;
 
 /**
+ * Given a provided dot-separated key (e.g. `"foo.bar"`) and object extract the
+ * corresponding value.
  *
- * e.g.:
+ * @example
  *
- * - dotSeparatedKey: "error1.error2",
- *   object: \{ error1:"internet error"; error2: "loading error" \}
- *   → ["internet error", "loading error"]
+ * ```ts
+ * getObjectValueByDotSeparatedKey({
+ *   dotSeparatedKey: "foo.bar",
+ *   object: {
+ *     foo: {
+ *       bar: "Hello"
+ *     }
+ *   }
+ * })
+ * // Hello
+ * ```
  *
  * @public
  */
@@ -137,25 +176,30 @@ export declare const getObjectValueByDotSeparatedKey: ({ dotSeparatedKey, object
 /**
  * Given a fully-qualified URL, returns a root-relative URL.
  *
- * e.g.:
+ * @example
  *
- * - "https://asl19.org/" → "/"
- * - "https://asl19.org/foo" → "/foo"
+ * ```ts
+ * getRootRelativeUrl("https://asl19.org/")
+ * // "/"
+ * getRootRelativeUrl("https://asl19.org/foo")
+ * // "/foo"
+ * ```
  *
  * @public
  */
 export declare const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
 
 /**
- * Returns true if string is null, an empty string, or a string of whitespace characters.
+ * Returns true if string is null, an empty string, or a string of whitespace
+ * characters.
  *
  * @public
  */
 export declare const isNullOrWhitespace: (input: string) => boolean;
 
 /**
- *
- * Given status code, description and url; console out the error message
+ * Logs a formatted error based on the provided description, HTTP status code,
+ * and URL.
  *
  * @public
  */
@@ -176,10 +220,14 @@ export declare const replaceArabicNumeralsWithPersianNumerals: (input: string) =
 /**
  * Given an underscore-cased string, returns a camel-cased string.
  *
- * e.g.:
+ * @example
  *
- * - foo_bar → fooBar
- * - foo → foo
+ * ```ts
+ * - underscoreCaseToCamelCase("foo_bar")
+ * // "fooBar"
+ * - underscoreCaseToCamelCase("foo")
+ * // "foo"
+ * ```
  *
  * @public
  */

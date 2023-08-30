@@ -1,14 +1,23 @@
 /**
+ * Given a provided dot-separated key (e.g. `"foo.bar"`) and object extract the
+ * corresponding value.
  *
- * e.g.:
+ * @example
  *
- * - dotSeparatedKey: "error1.error2",
- *   object: \{ error1:"internet error"; error2: "loading error" \}
- *   → ["internet error", "loading error"]
+ * ```ts
+ * getObjectValueByDotSeparatedKey({
+ *   dotSeparatedKey: "foo.bar",
+ *   object: {
+ *     foo: {
+ *       bar: "Hello"
+ *     }
+ *   }
+ * })
+ * // Hello
+ * ```
  *
  * @public
  */
-
 const getObjectValueByDotSeparatedKey = ({
   dotSeparatedKey,
   object,

@@ -4,14 +4,22 @@
 
 ## cleanUrlQueryString variable
 
-Returns a URL with trailing "?" and "&amp;" characters removed.
-
-e.g.:
-
-- "/foo?" → "/foo" - "/foo?bar&amp;" → "/foo?bar"
+Returns a URL with trailing `"?"` and `"&"` characters removed.
 
 **Signature:**
 
 ```typescript
 cleanUrlQueryString: (url: string) => string
 ```
+
+## Example
+
+
+```ts
+cleanUrlQueryString("/foo?")
+// "/foo"
+
+cleanUrlQueryString("/foo?bar&")
+// "/foo?bar"
+```
+

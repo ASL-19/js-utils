@@ -1,10 +1,15 @@
 /**
- * Returns a URL with trailing "?" and "&" characters removed.
+ * Returns a URL with trailing `"?"` and `"&"` characters removed.
  *
- * e.g.:
+ * @example
  *
- * - "/foo?" → "/foo"
- * - "/foo?bar&" → "/foo?bar"
+ * ```ts
+ * cleanUrlQueryString("/foo?")
+ * // "/foo"
+ *
+ * cleanUrlQueryString("/foo?bar&")
+ * // "/foo?bar"
+ * ```
  *
  * @param url - URL
  *

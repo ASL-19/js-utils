@@ -1,10 +1,9 @@
 /**
- *
- * Given status code, description and url; console out the error message
+ * Logs a formatted error based on the provided description, HTTP status code,
+ * and URL.
  *
  * @public
  */
-
 const logError = ({
   description,
   statusCode,

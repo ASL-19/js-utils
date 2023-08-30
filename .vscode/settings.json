@@ -11,14 +11,21 @@
     "source.fixAll.eslint": true
   },
   "eslint.enable": true,
-  "eslint.validate": ["javascript", "typescript"],
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
   "files.associations": {
     "api-extractor.json": "jsonc"
   },
   "editor.formatOnSave": false,
   "editor.tabSize": 2,
   "editor.unicodeHighlight.allowedCharacters": {
-    "’": true
+    "’": true,
+    "۱": true,
+    "۰": true,
+    "۵": true,
+    "۷": true
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
@@ -31,14 +38,11 @@
     "editor.formatOnSave": true
   },
   "search.exclude": {
-    ".yarn/releases/**/*": true,
-    ".yarnrc": true,
     "api-extractor/**/*": true,
     "CHANGELOG": true,
     "docs/**/*": true,
     "LICENSE": true,
-    "types/**/*": true,
-    "yarn.lock": true
+    "types/**/*": true
   },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

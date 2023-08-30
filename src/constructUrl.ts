@@ -1,13 +1,11 @@
-/**
- *
- * Given path and querySegments. Return url with query parameters
- *
- * @public
- *
- */
-
 import { match, P } from "ts-pattern";
 
+/**
+ * Format a root-relative URL based on provided path and query string key-value
+ * pairs.
+ *
+ * @public
+ */
 const constructUrl = ({
   path,
   querySegments = {},
@@ -21,7 +19,7 @@ const constructUrl = ({
         match(querySegments[key])
           .with(P.string, P.number, (segment) => `${acc}${key}=${segment}&`)
           .otherwise(() => acc),
-      `${path}?`
+      `${path}?`,
     )
     .replace(/&$/, "")
     .replace(/\?$/, "");

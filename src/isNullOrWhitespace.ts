@@ -1,5 +1,6 @@
 /**
- * Returns true if string is null, an empty string, or a string of whitespace characters.
+ * Returns true if string is null, an empty string, or a string of whitespace
+ * characters.
  *
  * @public
  */
