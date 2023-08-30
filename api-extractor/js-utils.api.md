@@ -12,7 +12,7 @@ export const asType: <T>(value: T) => T;
 // @public
 export const cleanUrlQueryString: (url: string) => string;
 
-// @public (undocumented)
+// @public
 export const constructUrl: ({ path, querySegments, }: {
     path: string;
     querySegments?: {
@@ -29,7 +29,7 @@ export const getAbsoluteUrl: ({ rootRelativeUrl, webPublicUrl, }: {
 // @public
 export const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string;
 
-// @public (undocumented)
+// @public
 export const getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
     defaults: NormalizedQueryType;
     query: ParsedUrlQuery;
