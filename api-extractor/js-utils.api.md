@@ -36,11 +36,13 @@ export const getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types,
     types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
 }) => NormalizedQueryType;
 
+// Warning: (ae-forgotten-export) The symbol "Tree" needs to be exported by the entry point index.d.ts
+//
 // @public
-export const getObjectValueByDotSeparatedKey: ({ dotSeparatedKey, object, }: {
+export const getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, object, }: {
     dotSeparatedKey: string;
-    object: object;
-}) => object;
+    object: Tree<Leaf>;
+}) => Tree<Leaf>;
 
 // @public
 export const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
@@ -49,14 +51,14 @@ export const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
 export const isNullOrWhitespace: (input: string) => boolean;
 
 // @public
-export const logError: ({ description, statusCode, url, }: {
-    description: string;
-    statusCode: number;
-    url: string;
-}) => void;
+export const replaceArabicNumeralsWithPersianNumerals: (input: string) => string;
 
 // @public
-export const replaceArabicNumeralsWithPersianNumerals: (input: string) => string;
+export const serverLog: ({ description, path, statusCode, }: {
+    description?: string | undefined;
+    path?: string | undefined;
+    statusCode?: number | undefined;
+}) => void;
 
 // @public
 export const underscoreCaseToCamelCase: (underscoreCasedString: string) => string;

@@ -340,7 +340,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "@asl-19/js-utils!getObjectValueByDotSeparatedKey:var",
-          "docComment": "/**\n * Given a provided dot-separated key (e.g. `\"foo.bar\"`) and object extract the corresponding value.\n *\n * @example\n * ```ts\n * getObjectValueByDotSeparatedKey({\n *   dotSeparatedKey: \"foo.bar\",\n *   object: {\n *     foo: {\n *       bar: \"Hello\"\n *     }\n *   }\n * })\n * // Hello\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Given a provided dot-separated key (e.g. `\"foo.bar\"`) and object extract the corresponding value.\n *\n * @example\n * ```ts\n *\n * const object = {\n *   foo: {\n *     bar: \"Hello\"\n *   }\n * };\n *\n * getObjectValueByDotSeparatedKey({\n *   dotSeparatedKey: \"foo.bar\",\n *   object,\n * })\n * // Hello\n *\n * getObjectValueByDotSeparatedKey({\n *   dotSeparatedKey: \"foo\",\n *   object,\n * })\n * // { bar: \"Hello\"}\n *\n * getObjectValueByDotSeparatedKey({\n *   dotSeparatedKey: \"abc\",\n *   object,\n * })\n * // undefined\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -348,7 +348,25 @@
             },
             {
               "kind": "Content",
-              "text": "({ dotSeparatedKey, object, }: {\n    dotSeparatedKey: string;\n    object: object;\n}) => object"
+              "text": "<Leaf>({ dotSeparatedKey, object, }: {\n    dotSeparatedKey: string;\n    object: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Tree",
+              "canonicalReference": "@asl-19/js-utils!~Tree:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<Leaf>;\n}) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Tree",
+              "canonicalReference": "@asl-19/js-utils!~Tree:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<Leaf>"
             }
           ],
           "fileUrlPath": "src/getObjectValueByDotSeparatedKey.ts",
@@ -357,7 +375,7 @@
           "name": "getObjectValueByDotSeparatedKey",
           "variableTypeTokenRange": {
             "startIndex": 1,
-            "endIndex": 2
+            "endIndex": 6
           }
         },
         {
@@ -408,29 +426,6 @@
         },
         {
           "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!logError:var",
-          "docComment": "/**\n * Logs a formatted error based on the provided description, HTTP status code, and URL.\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "logError: "
-            },
-            {
-              "kind": "Content",
-              "text": "({ description, statusCode, url, }: {\n    description: string;\n    statusCode: number;\n    url: string;\n}) => void"
-            }
-          ],
-          "fileUrlPath": "src/logError.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "logError",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
           "canonicalReference": "@asl-19/js-utils!replaceArabicNumeralsWithPersianNumerals:var",
           "docComment": "/**\n * Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals.\n *\n * @public\n */\n",
           "excerptTokens": [
@@ -447,6 +442,29 @@
           "isReadonly": true,
           "releaseTag": "Public",
           "name": "replaceArabicNumeralsWithPersianNumerals",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@asl-19/js-utils!serverLog:var",
+          "docComment": "/**\n * Logs a formatted message based on the provided description, HTTP status code, and path.\n *\n * @remarks\n *\n * Should only be used on the server — will output a warning and return early if called from the browser.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "serverLog: "
+            },
+            {
+              "kind": "Content",
+              "text": "({ description, path, statusCode, }: {\n    description?: string | undefined;\n    path?: string | undefined;\n    statusCode?: number | undefined;\n}) => void"
+            }
+          ],
+          "fileUrlPath": "src/serverLog.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "serverLog",
           "variableTypeTokenRange": {
             "startIndex": 1,
             "endIndex": 2

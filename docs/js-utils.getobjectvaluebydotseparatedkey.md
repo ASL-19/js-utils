@@ -9,24 +9,39 @@ Given a provided dot-separated key (e.g. `"foo.bar"`<!-- -->) and object extract
 **Signature:**
 
 ```typescript
-getObjectValueByDotSeparatedKey: ({ dotSeparatedKey, object, }: {
+getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, object, }: {
     dotSeparatedKey: string;
-    object: object;
-}) => object
+    object: Tree<Leaf>;
+}) => Tree<Leaf>
 ```
 
 ## Example
 
 
 ```ts
+
+const object = {
+  foo: {
+    bar: "Hello"
+  }
+};
+
 getObjectValueByDotSeparatedKey({
   dotSeparatedKey: "foo.bar",
-  object: {
-    foo: {
-      bar: "Hello"
-    }
-  }
+  object,
 })
 // Hello
+
+getObjectValueByDotSeparatedKey({
+  dotSeparatedKey: "foo",
+  object,
+})
+// { bar: "Hello"}
+
+getObjectValueByDotSeparatedKey({
+  dotSeparatedKey: "abc",
+  object,
+})
+// undefined
 ```
 

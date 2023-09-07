@@ -21,7 +21,7 @@ These functions don’t rely on DOM, React, or React Native APIs.
 |  [getObjectValueByDotSeparatedKey](./js-utils.getobjectvaluebydotseparatedkey.md) | Given a provided dot-separated key (e.g. <code>&quot;foo.bar&quot;</code>) and object extract the corresponding value. |
 |  [getRootRelativeUrl](./js-utils.getrootrelativeurl.md) | Given a fully-qualified URL, returns a root-relative URL. |
 |  [isNullOrWhitespace](./js-utils.isnullorwhitespace.md) | Returns true if string is null, an empty string, or a string of whitespace characters. |
-|  [logError](./js-utils.logerror.md) | Logs a formatted error based on the provided description, HTTP status code, and URL. |
 |  [replaceArabicNumeralsWithPersianNumerals](./js-utils.replacearabicnumeralswithpersiannumerals.md) | Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals. |
+|  [serverLog](./js-utils.serverlog.md) | Logs a formatted message based on the provided description, HTTP status code, and path. |
 |  [underscoreCaseToCamelCase](./js-utils.underscorecasetocamelcase.md) | Given an underscore-cased string, returns a camel-cased string. |
 

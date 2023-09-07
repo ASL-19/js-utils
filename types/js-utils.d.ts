@@ -155,23 +155,38 @@ export declare const getNormalizedQuery: <NormalizedQueryType>({ defaults, query
  * @example
  *
  * ```ts
+ *
+ * const object = {
+ *   foo: {
+ *     bar: "Hello"
+ *   }
+ * };
+ *
  * getObjectValueByDotSeparatedKey({
  *   dotSeparatedKey: "foo.bar",
- *   object: {
- *     foo: {
- *       bar: "Hello"
- *     }
- *   }
+ *   object,
  * })
  * // Hello
+ *
+ * getObjectValueByDotSeparatedKey({
+ *   dotSeparatedKey: "foo",
+ *   object,
+ * })
+ * // { bar: "Hello"}
+ *
+ * getObjectValueByDotSeparatedKey({
+ *   dotSeparatedKey: "abc",
+ *   object,
+ * })
+ * // undefined
  * ```
  *
  * @public
  */
-export declare const getObjectValueByDotSeparatedKey: ({ dotSeparatedKey, object, }: {
+export declare const getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, object, }: {
     dotSeparatedKey: string;
-    object: object;
-}) => object;
+    object: Tree<Leaf>;
+}) => Tree<Leaf>;
 
 /**
  * Given a fully-qualified URL, returns a root-relative URL.
@@ -198,24 +213,33 @@ export declare const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
 export declare const isNullOrWhitespace: (input: string) => boolean;
 
 /**
- * Logs a formatted error based on the provided description, HTTP status code,
- * and URL.
- *
- * @public
- */
-export declare const logError: ({ description, statusCode, url, }: {
-    description: string;
-    statusCode: number;
-    url: string;
-}) => void;
-
-/**
  * Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian
  * (Perso-Arabic) numerals.
  *
  * @public
  */
 export declare const replaceArabicNumeralsWithPersianNumerals: (input: string) => string;
+
+/**
+ * Logs a formatted message based on the provided description, HTTP status code,
+ * and path.
+ *
+ * @remarks
+ *
+ * Should only be used on the server — will output a warning and return early if
+ * called from the browser.
+ *
+ * @public
+ */
+export declare const serverLog: ({ description, path, statusCode, }: {
+    description?: string | undefined;
+    path?: string | undefined;
+    statusCode?: number | undefined;
+}) => void;
+
+declare type Tree<T> = {
+    [key: string | number]: T | Tree<T> | undefined;
+};
 
 /**
  * Given an underscore-cased string, returns a camel-cased string.
