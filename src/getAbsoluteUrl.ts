@@ -33,7 +33,7 @@ const getAbsoluteUrl = ({
 }) => {
   if (!protocolAndHostRegExp.test(protocolAndHost)) {
     console.warn(
-      '[js-utils getAbsoluteUrl] Called with invalid protocolAndHost: should look like "https://asl19.org", with no trailing slash. Returning provided rootRelativeUrl as-is:',
+      '[@asl-19/js-utils getAbsoluteUrl] Called with invalid protocolAndHost: should look like "https://asl19.org", with no trailing slash. Returning provided rootRelativeUrl as-is:',
       rootRelativeUrl,
     );
 
@@ -42,7 +42,7 @@ const getAbsoluteUrl = ({
 
   if (!rootRelativeUrlRegExp.test(rootRelativeUrl)) {
     console.warn(
-      '[js-utils getAbsoluteUrl] Called with invalid rootRelativeUrl: should start with "/". Returning provided rootRelativeUrl as-is:',
+      '[@asl-19/js-utils getAbsoluteUrl] Called with invalid rootRelativeUrl: should start with "/". Returning provided rootRelativeUrl as-is:',
       rootRelativeUrl,
     );
 
