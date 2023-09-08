@@ -48,6 +48,9 @@
     "tsc-esm-watch": "tsc --project tsconfig-esm.json --watch",
     "tsc-check": "tsc --noEmit"
   },
+  "dependencies": {
+    "ts-pattern": "^5.0.0"
+  },
   "devDependencies": {
     "@asl-19/eslint-config": "^0.8.0",
     "@asl-19/shared-package-configs": "^0.3.0",
@@ -60,7 +63,6 @@
     "npm-run-all2": "^6.0.6",
     "package-changed": "^3.0.0",
     "prettier": "^3.0.3",
-    "ts-pattern": "^5.0.5",
     "typescript": "^5.2.2"
   }
 }
