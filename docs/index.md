@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@asl-19/js-utils](./js-utils.md) | A collection of plain JavaScript utility functions for ASL19 projects.<!-- -->These functions don’t rely on DOM, React, or React Native APIs. |
+|  [@asl-19/js-utils](./js-utils.md) | <p>A collection of plain JavaScript utility functions for ASL19 projects.</p><p>These functions don’t rely on DOM, React, or React Native APIs.</p> |
 

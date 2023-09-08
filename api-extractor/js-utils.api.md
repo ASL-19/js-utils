@@ -4,8 +4,45 @@
 
 ```ts
 
+import { ParsedUrlQuery } from 'querystring';
+
+// @public
+export const asType: <T>(value: T) => T;
+
 // @public
 export const cleanUrlQueryString: (url: string) => string;
+
+// @public
+export const constructUrl: ({ path, querySegments, }: {
+    path: string;
+    querySegments?: {
+        [key: string]: string | number | null | undefined;
+    } | undefined;
+}) => string;
+
+// @public
+export const getAbsoluteUrl: ({ protocolAndHost, rootRelativeUrl, }: {
+    protocolAndHost: string;
+    rootRelativeUrl: string;
+}) => string;
+
+// @public
+export const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string | undefined;
+
+// @public
+export const getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
+    defaults: NormalizedQueryType;
+    query: ParsedUrlQuery;
+    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
+}) => NormalizedQueryType;
+
+// Warning: (ae-forgotten-export) The symbol "Tree" needs to be exported by the entry point index.d.ts
+//
+// @public
+export const getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, object, }: {
+    dotSeparatedKey: string;
+    object: Tree<Leaf>;
+}) => Tree<Leaf>;
 
 // @public
 export const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
@@ -17,7 +54,13 @@ export const isNullOrWhitespace: (input: string) => boolean;
 export const replaceArabicNumeralsWithPersianNumerals: (input: string) => string;
 
 // @public
-export const underscoreCaseToCamelCase: (underscoreCasedString: string) => string;
+export const serverLog: ({ description, path, statusCode, }: {
+    description?: string | undefined;
+    path?: string | undefined;
+    statusCode?: number | undefined;
+}) => void;
 
+// @public
+export const underscoreCaseToCamelCase: (underscoreCasedString: string) => string;
 
 ```

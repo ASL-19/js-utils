@@ -6,7 +6,7 @@
 
 Returns true if string is null, an empty string, or a string of whitespace characters.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 isNullOrWhitespace: (input: string) => boolean

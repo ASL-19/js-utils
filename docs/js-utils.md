@@ -12,9 +12,16 @@ These functions don’t rely on DOM, React, or React Native APIs.
 
 |  Variable | Description |
 |  --- | --- |
-|  [cleanUrlQueryString](./js-utils.cleanurlquerystring.md) | Returns a URL with trailing "?" and "&amp;" characters removed.<!-- -->e.g.:<!-- -->- "/foo?" → "/foo" - "/foo?bar&amp;" → "/foo?bar" |
-|  [getRootRelativeUrl](./js-utils.getrootrelativeurl.md) | Given a fully-qualified URL, returns a root-relative URL.<!-- -->e.g.:<!-- -->- "https://asl19.org/" → "/" - "https://asl19.org/foo" → "/foo" |
+|  [asType](./js-utils.astype.md) | Cast an object to a specified data type. |
+|  [cleanUrlQueryString](./js-utils.cleanurlquerystring.md) | Returns a URL with trailing <code>&quot;?&quot;</code> and <code>&quot;&amp;&quot;</code> characters removed. |
+|  [constructUrl](./js-utils.constructurl.md) | Format a root-relative URL based on provided path and query string key-value pairs. |
+|  [getAbsoluteUrl](./js-utils.getabsoluteurl.md) | Given provided protocol + host string and root-relative URL string returns an absolute (fully-qualified) URL. |
+|  [getFirstStringOrString](./js-utils.getfirststringorstring.md) | Given an array or a string, return its first string element. |
+|  [getNormalizedQuery](./js-utils.getnormalizedquery.md) | Returns a normalized representation of the passed query with default values. |
+|  [getObjectValueByDotSeparatedKey](./js-utils.getobjectvaluebydotseparatedkey.md) | Given a provided dot-separated key (e.g. <code>&quot;foo.bar&quot;</code>) and object extract the corresponding value. |
+|  [getRootRelativeUrl](./js-utils.getrootrelativeurl.md) | Given a fully-qualified URL, returns a root-relative URL. |
 |  [isNullOrWhitespace](./js-utils.isnullorwhitespace.md) | Returns true if string is null, an empty string, or a string of whitespace characters. |
 |  [replaceArabicNumeralsWithPersianNumerals](./js-utils.replacearabicnumeralswithpersiannumerals.md) | Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals. |
-|  [underscoreCaseToCamelCase](./js-utils.underscorecasetocamelcase.md) | Given an underscore-cased string, returns a camel-cased string.<!-- -->e.g.:<!-- -->- foo\_bar → fooBar - foo → foo |
+|  [serverLog](./js-utils.serverlog.md) | Logs a formatted message based on the provided description, HTTP status code, and path. |
+|  [underscoreCaseToCamelCase](./js-utils.underscorecasetocamelcase.md) | Given an underscore-cased string, returns a camel-cased string. |
 

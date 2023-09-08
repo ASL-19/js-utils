@@ -1,14 +1,18 @@
 /**
  * Given a fully-qualified URL, returns a root-relative URL.
  *
- * e.g.:
+ * @example
  *
- * - "https://asl19.org/" → "/"
- * - "https://asl19.org/foo" → "/foo"
+ * ```ts
+ * getRootRelativeUrl("https://asl19.org/")
+ * // "/"
+ * getRootRelativeUrl("https://asl19.org/foo")
+ * // "/foo"
+ * ```
  *
  * @public
  */
-const getRootRelativeUrl = (fullyQualifiedUrl: string): string =>
+const getRootRelativeUrl = (fullyQualifiedUrl: string) =>
   fullyQualifiedUrl.replace(/^https?:\/\/[^/]*/, "");
 
 export default getRootRelativeUrl;
