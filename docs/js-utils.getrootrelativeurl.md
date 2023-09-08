@@ -6,12 +6,19 @@
 
 Given a fully-qualified URL, returns a root-relative URL.
 
-e.g.:
-
-- "https://asl19.org/" → "/" - "https://asl19.org/foo" → "/foo"
-
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 getRootRelativeUrl: (fullyQualifiedUrl: string) => string
 ```
+
+## Example
+
+
+```ts
+getRootRelativeUrl("https://asl19.org/")
+// "/"
+getRootRelativeUrl("https://asl19.org/foo")
+// "/foo"
+```
+

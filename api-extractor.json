@@ -8,6 +8,9 @@
     "enabled": true,
     "reportFolder": "<projectFolder>/api-extractor"
   },
+  "compiler": {
+    "tsconfigFilePath": "tsconfig.json"
+  },
   "docModel": {
     "enabled": true,
     "apiJsonFilePath": "<projectFolder>/api-extractor/js-utils.api.json"

@@ -6,7 +6,7 @@
 
 Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 replaceArabicNumeralsWithPersianNumerals: (input: string) => string
