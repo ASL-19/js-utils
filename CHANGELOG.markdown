@@ -1,5 +1,11 @@
 # @asl-19/js-utils changelog
 
+## [0.3.1](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.3.1+is%3Aclosed) [2023-09-20]
+
+### Fixes
+
+- In `constructUrl` exclude `querySegments` with falsy values [[#31](https://github.com/ASL-19/js-utils/pull/21)]
+
 ## [0.3.0](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.3.0+is%3Aclosed) [2023-09-08]
 
 ### Changes
