@@ -17,7 +17,11 @@ const constructUrl = ({
     .reduce(
       (acc, key) =>
         match(querySegments[key])
-          .with(P.string, P.number, (segment) => `${acc}${key}=${segment}&`)
+          .with(
+            P.string.minLength(1),
+            P.union(P.number.positive(), P.number.negative()),
+            (segment) => `${acc}${key}=${segment}&`,
+          )
           .otherwise(() => acc),
       `${path}?`,
     )
