@@ -41,11 +41,11 @@ export declare const cleanUrlQueryString: (url: string) => string;
  * @public
  */
 export declare const constructUrl: ({ path, querySegments, }: {
-    path: string;
+    path: `/${string}`;
     querySegments?: {
         [key: string]: string | number | null | undefined;
     } | undefined;
-}) => string;
+}) => `/${string}`;
 
 /**
  * Given provided protocol + host string and root-relative URL string returns an

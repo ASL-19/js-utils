@@ -14,11 +14,11 @@ export const cleanUrlQueryString: (url: string) => string;
 
 // @public
 export const constructUrl: ({ path, querySegments, }: {
-    path: string;
+    path: `/${string}`;
     querySegments?: {
         [key: string]: string | number | null | undefined;
     } | undefined;
-}) => string;
+}) => `/${string}`;
 
 // @public
 export const getAbsoluteUrl: ({ protocolAndHost, rootRelativeUrl, }: {
