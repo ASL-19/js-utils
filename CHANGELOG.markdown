@@ -1,5 +1,11 @@
 # @asl-19/js-utils changelog
 
+## [0.3.2](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.3.2+is%3Aclosed) [2023-09-21]
+
+### Changes
+
+- In constructUrl enforce that path starts with "/" [[#23](https://github.com/ASL-19/js-utils/pull/23)]
+
 ## [0.3.1](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.3.1+is%3Aclosed) [2023-09-20]
 
 ### Fixes
