@@ -10,9 +10,9 @@ Format a root-relative URL based on provided path and query string key-value pai
 
 ```typescript
 constructUrl: ({ path, querySegments, }: {
-    path: string;
+    path: `/${string}`;
     querySegments?: {
         [key: string]: string | number | null | undefined;
     } | undefined;
-}) => string
+}) => `/${string}`
 ```

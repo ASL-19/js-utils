@@ -10,7 +10,7 @@ const constructUrl = ({
   path,
   querySegments = {},
 }: {
-  path: string;
+  path: `/${string}`;
   querySegments?: { [key: string]: string | number | null | undefined };
 }) =>
   Object.keys(querySegments)
@@ -26,6 +26,6 @@ const constructUrl = ({
       `${path}?`,
     )
     .replace(/&$/, "")
-    .replace(/\?$/, "");
+    .replace(/\?$/, "") as `/${string}`;
 
 export default constructUrl;

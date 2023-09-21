@@ -229,7 +229,7 @@
             },
             {
               "kind": "Content",
-              "text": "({ path, querySegments, }: {\n    path: string;\n    querySegments?: {\n        [key: string]: string | number | null | undefined;\n    } | undefined;\n}) => string"
+              "text": "({ path, querySegments, }: {\n    path: `/${string}`;\n    querySegments?: {\n        [key: string]: string | number | null | undefined;\n    } | undefined;\n}) => `/${string}`"
             }
           ],
           "fileUrlPath": "src/constructUrl.ts",
