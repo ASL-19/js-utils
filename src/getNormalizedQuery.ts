@@ -1,7 +1,12 @@
 import { ParsedUrlQuery } from "querystring";
 import { match, P } from "ts-pattern";
 
-import getFirstStringOrString from "./getFirstStringOrString";
+import {
+  getNumericValue,
+  getQueryValueArray,
+  getQueryValueString,
+  QueryParameterType,
+} from "./getQueryUtils";
 
 /**
  * Returns a normalized representation of the passed query with default values.
@@ -53,34 +58,47 @@ const getNormalizedQuery = <NormalizedQueryType>({
   types: {
     [queryParameterName in keyof NormalizedQueryType]: NonNullable<
       NormalizedQueryType[queryParameterName]
-    > extends number
+    > extends Array<number>
+      ? "arrayNumber"
+      : NonNullable<
+          NormalizedQueryType[queryParameterName]
+        > extends Array<string>
+      ? "arrayString"
+      : NonNullable<NormalizedQueryType[queryParameterName]> extends number
       ? "number"
       : "string";
   };
 }) =>
-  Object.keys(query).reduce(
-    (acc, queryParameterName) =>
-      match(getFirstStringOrString(query[queryParameterName]))
-        .with(
-          P.string,
-          (firstStringOrString) =>
-            types[queryParameterName as keyof typeof types] === "number" &&
-            /^\d+$/.test(firstStringOrString),
-          (firstStringOrString) => ({
-            ...acc,
-            [queryParameterName]: parseInt(firstStringOrString),
-          }),
-        )
-        .with(
-          P.string,
-          () => types[queryParameterName as keyof typeof types] === "string",
-          (firstStringOrString) => ({
-            ...acc,
-            [queryParameterName]: firstStringOrString,
-          }),
-        )
-        .otherwise(() => acc),
-    defaults,
-  );
+  Object.keys(types).reduce((acc, key) => {
+    const queryParameterName = key as keyof typeof types;
+    const queryParameterType: QueryParameterType = types[queryParameterName];
+    const queryParameterValue = query[queryParameterName as string];
+
+    if (queryParameterValue === undefined) {
+      return acc;
+    }
+
+    const normalizedQueryParameterValue = match(queryParameterType)
+      .with("arrayNumber", () =>
+        getQueryValueArray(queryParameterValue).reduce<Array<number>>(
+          (acc, queryParameterValueItem) =>
+            match(getNumericValue(queryParameterValueItem))
+              .with(P.number, (numericValue) => [...acc, numericValue])
+              .otherwise(() => acc),
+          [],
+        ),
+      )
+      .with("arrayString", () => getQueryValueArray(queryParameterValue))
+      .with(
+        "number",
+        () => getNumericValue(getQueryValueString(queryParameterValue)) ?? null,
+      )
+      .with("string", () => getQueryValueString(queryParameterValue))
+      .exhaustive();
+
+    return normalizedQueryParameterValue
+      ? { ...acc, [queryParameterName]: normalizedQueryParameterValue }
+      : acc;
+  }, defaults);
 
 export default getNormalizedQuery;

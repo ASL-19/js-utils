@@ -11,7 +11,15 @@ const constructUrl = ({
   querySegments = {},
 }: {
   path: `/${string}`;
-  querySegments?: { [key: string]: string | number | null | undefined };
+  querySegments?: {
+    [key: string]:
+      | Array<string>
+      | string
+      | Array<number>
+      | number
+      | null
+      | undefined;
+  };
 }) =>
   Object.keys(querySegments)
     .reduce(
@@ -21,6 +29,20 @@ const constructUrl = ({
             P.string.minLength(1),
             P.union(P.number.positive(), P.number.negative()),
             (segment) => `${acc}${key}=${segment}&`,
+          )
+          .with(P.array(P.string), (segmentArr) =>
+            segmentArr.reduce(
+              (segmentAcc, segment) => `${segmentAcc}${key}=${segment}&`,
+              acc,
+            ),
+          )
+          .with(
+            P.array(P.union(P.number.positive(), P.number.negative())),
+            (segmentArr) =>
+              segmentArr.reduce(
+                (segmentAcc, segment) => `${segmentAcc}${key}=${segment}&`,
+                acc,
+              ),
           )
           .otherwise(() => acc),
       `${path}?`,
