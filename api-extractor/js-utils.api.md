@@ -27,6 +27,9 @@ export const getAbsoluteUrl: ({ protocolAndHost, rootRelativeUrl, }: {
 }) => string;
 
 // @public
+export const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string | undefined;
+
+// @public
 export const getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
     defaults: NormalizedQueryType;
     query: ParsedUrlQuery;

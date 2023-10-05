@@ -16,6 +16,7 @@ These functions don’t rely on DOM, React, or React Native APIs.
 |  [cleanUrlQueryString](./js-utils.cleanurlquerystring.md) | Returns a URL with trailing <code>&quot;?&quot;</code> and <code>&quot;&amp;&quot;</code> characters removed. |
 |  [constructUrl](./js-utils.constructurl.md) | Format a root-relative URL based on provided path and query string key-value pairs. |
 |  [getAbsoluteUrl](./js-utils.getabsoluteurl.md) | Given provided protocol + host string and root-relative URL string returns an absolute (fully-qualified) URL. |
+|  [getFirstStringOrString](./js-utils.getfirststringorstring.md) | Given an array or a string, return its first string element. |
 |  [getNormalizedQuery](./js-utils.getnormalizedquery.md) | Returns a normalized representation of the passed query with default values. |
 |  [getObjectValueByDotSeparatedKey](./js-utils.getobjectvaluebydotseparatedkey.md) | Given a provided dot-separated key (e.g. <code>&quot;foo.bar&quot;</code>) and object extract the corresponding value. |
 |  [getQueryUtils](./js-utils.getqueryutils.md) | <p>A collection of utility functions to process, validate, and transform query parameters.</p><p>- <code>getNumericValue</code> extracts a numeric value from a string if valid. - <code>getQueryValueString</code> retrieves the first string value from a string or an array of strings. - <code>getQueryValueArray</code> ensures a given input is returned as an array of strings.</p> |
