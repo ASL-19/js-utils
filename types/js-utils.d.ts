@@ -106,23 +106,15 @@ export declare const getFirstStringOrString: (arrayOrString?: Array<string> | st
  * Returns a normalized representation of the passed query with default values.
  *
  * @remarks
+ * It’s important to normalize the query before use because `ParsedUrlQuery`
+ * (returned by Node’s `querystring.parse()`, and e.g. exposed by Next.js in
+ * `getServerSideProps` and `useRouter().query`) can be an array if multiple
+ * query string parameters with the same key are in the URL. e.g.:
  *
- * Query values are converted to number if the corresponding default value is a
- * number; otherwise they will be typed string.
+ * - `?rating=true` → `{rating: "true"}`;
+ * - `?rating=true&rating=false` → `{rating: ["true", false"]}`
  *
- * 1. It’s important to normalize the query before use because the
- *    ParsedUrlQuery exposed by Next.js in getServerSideProps and
- *    useRouter().query can be an array if multiple query string parameters with
- *    the same key are in the URL. e.g.:
- *
- *    - `?rating=true` → `{rating: "true"}`;
- *    - `?rating=true&rating=false` → `{rating: ["true", false"]}`
- *
- *    This is easy to forget, but could cause runtime errors.
- *
- * 2. In the future the aforementioned defaults-driven auto-conversion may also
- *    support arrays of strings and arrays of numbers to support use cases like
- *    law_database_web’s multi-tag select).
+ * This is easy to forget, but could cause runtime errors.
  *
  * @public
  */
@@ -187,21 +179,6 @@ export declare const getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, 
     dotSeparatedKey: string;
     object: Tree<Leaf>;
 }) => Tree<Leaf>;
-
-/**
- * A collection of utility functions to process, validate, and transform query parameters.
- *
- * - `getNumericValue` extracts a numeric value from a string if valid.
- * - `getQueryValueString` retrieves the first string value from a string or an array of strings.
- * - `getQueryValueArray` ensures a given input is returned as an array of strings.
- *
- * @public
- */
-export declare const getQueryUtils: {
-    getNumericValue: (value: string) => number | null;
-    getQueryValueArray: (arrayOrString: Array<string> | string) => string[];
-    getQueryValueString: (arrayOrString: Array<string> | string) => string;
-};
 
 /**
  * Given a fully-qualified URL, returns a root-relative URL.

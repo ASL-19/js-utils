@@ -18,4 +18,3 @@ export { default as getObjectValueByDotSeparatedKey } from "./getObjectValueByDo
 export { default as serverLog } from "./serverLog";
 export { default as constructUrl } from "./constructUrl";
 export { default as getNormalizedQuery } from "./getNormalizedQuery";
-export { default as getQueryUtils } from "./getQueryUtils";

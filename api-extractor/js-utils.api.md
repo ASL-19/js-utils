@@ -45,13 +45,6 @@ export const getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, object, 
 }) => Tree<Leaf>;
 
 // @public
-export const getQueryUtils: {
-    getNumericValue: (value: string) => number | null;
-    getQueryValueArray: (arrayOrString: Array<string> | string) => string[];
-    getQueryValueString: (arrayOrString: Array<string> | string) => string;
-};
-
-// @public
 export const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
 
 // @public

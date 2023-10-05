@@ -18,13 +18,9 @@ getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
 
 ## Remarks
 
-Query values are converted to number if the corresponding default value is a number; otherwise they will be typed string.
-
-1. It’s important to normalize the query before use because the ParsedUrlQuery exposed by Next.js in getServerSideProps and useRouter().query can be an array if multiple query string parameters with the same key are in the URL. e.g.:
+It’s important to normalize the query before use because `ParsedUrlQuery` (returned by Node’s `querystring.parse()`<!-- -->, and e.g. exposed by Next.js in `getServerSideProps` and `useRouter().query`<!-- -->) can be an array if multiple query string parameters with the same key are in the URL. e.g.:
 
 - `?rating=true` → `{rating: "true"}`<!-- -->; - `?rating=true&rating=false` → `{rating: ["true", false"]}`
 
 This is easy to forget, but could cause runtime errors.
-
-2. In the future the aforementioned defaults-driven auto-conversion may also support arrays of strings and arrays of numbers to support use cases like law\_database\_web’s multi-tag select).
 

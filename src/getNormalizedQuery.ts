@@ -1,34 +1,34 @@
 import { ParsedUrlQuery } from "querystring";
 import { match, P } from "ts-pattern";
 
-import {
-  getNumericValue,
-  getQueryValueArray,
-  getQueryValueString,
-} from "./getQueryUtils";
-
 type QueryParameterType = "arrayNumber" | "arrayString" | "number" | "string";
+
+const getQueryValueString = (arrayOrString: Array<string> | string) =>
+  Array.isArray(arrayOrString)
+    ? // We can safely assume that a provided array will have at least one item due
+      // to the way Node’s querystring.parse() works
+      (arrayOrString?.[0] as string)
+    : arrayOrString;
+
+const getQueryValueArray = (arrayOrString: Array<string> | string) =>
+  Array.isArray(arrayOrString) ? arrayOrString : [arrayOrString];
+
+const getNumericValue = (value: string) =>
+  /^\d+$/.test(value) ? parseInt(value) : null;
+
 /**
  * Returns a normalized representation of the passed query with default values.
  *
  * @remarks
+ * It’s important to normalize the query before use because `ParsedUrlQuery`
+ * (returned by Node’s `querystring.parse()`, and e.g. exposed by Next.js in
+ * `getServerSideProps` and `useRouter().query`) can be an array if multiple
+ * query string parameters with the same key are in the URL. e.g.:
  *
- * Query values are converted to number if the corresponding default value is a
- * number; otherwise they will be typed string.
+ * - `?rating=true` → `{rating: "true"}`;
+ * - `?rating=true&rating=false` → `{rating: ["true", false"]}`
  *
- * 1. It’s important to normalize the query before use because the
- *    ParsedUrlQuery exposed by Next.js in getServerSideProps and
- *    useRouter().query can be an array if multiple query string parameters with
- *    the same key are in the URL. e.g.:
- *
- *    - `?rating=true` → `{rating: "true"}`;
- *    - `?rating=true&rating=false` → `{rating: ["true", false"]}`
- *
- *    This is easy to forget, but could cause runtime errors.
- *
- * 2. In the future the aforementioned defaults-driven auto-conversion may also
- *    support arrays of strings and arrays of numbers to support use cases like
- *    law_database_web’s multi-tag select).
+ * This is easy to forget, but could cause runtime errors.
  *
  * @public
  */
@@ -69,10 +69,10 @@ const getNormalizedQuery = <NormalizedQueryType>({
       : "string";
   };
 }) =>
-  Object.keys(types).reduce((acc, key) => {
-    const queryParameterName = key as keyof typeof types;
-    const queryParameterType: QueryParameterType = types[queryParameterName];
-    const queryParameterValue = query[queryParameterName as string];
+  Object.keys(types).reduce((acc, queryParameterName) => {
+    const queryParameterType: QueryParameterType =
+      types[queryParameterName as keyof typeof types];
+    const queryParameterValue = query[queryParameterName];
 
     if (queryParameterValue === undefined) {
       return acc;
