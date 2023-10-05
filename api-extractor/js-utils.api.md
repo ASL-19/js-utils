@@ -27,9 +27,6 @@ export const getAbsoluteUrl: ({ protocolAndHost, rootRelativeUrl, }: {
 }) => string;
 
 // @public
-export const getFirstStringOrString: (arrayOrString?: Array<string> | string) => string | undefined;
-
-// @public
 export const getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
     defaults: NormalizedQueryType;
     query: ParsedUrlQuery;
@@ -43,6 +40,13 @@ export const getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, object, 
     dotSeparatedKey: string;
     object: Tree<Leaf>;
 }) => Tree<Leaf>;
+
+// @public (undocumented)
+export const getQueryUtils: {
+    getNumericValue: (value: string) => number | null;
+    getQueryValueArray: (arrayOrString: Array<string> | string) => string[];
+    getQueryValueString: (arrayOrString: Array<string> | string) => string;
+};
 
 // @public
 export const getRootRelativeUrl: (fullyQualifiedUrl: string) => string;
