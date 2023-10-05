@@ -367,7 +367,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "@asl-19/js-utils!getQueryUtils:var",
-          "docComment": "",
+          "docComment": "/**\n * A collection of utility functions to process, validate, and transform query parameters.\n *\n * - `getNumericValue` extracts a numeric value from a string if valid. - `getQueryValueString` retrieves the first string value from a string or an array of strings. - `getQueryValueArray` ensures a given input is returned as an array of strings.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

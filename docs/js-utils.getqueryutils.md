@@ -4,6 +4,10 @@
 
 ## getQueryUtils variable
 
+A collection of utility functions to process, validate, and transform query parameters.
+
+- `getNumericValue` extracts a numeric value from a string if valid. - `getQueryValueString` retrieves the first string value from a string or an array of strings. - `getQueryValueArray` ensures a given input is returned as an array of strings.
+
 **Signature:**
 
 ```typescript

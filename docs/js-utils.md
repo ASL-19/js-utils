@@ -18,7 +18,7 @@ These functions don’t rely on DOM, React, or React Native APIs.
 |  [getAbsoluteUrl](./js-utils.getabsoluteurl.md) | Given provided protocol + host string and root-relative URL string returns an absolute (fully-qualified) URL. |
 |  [getNormalizedQuery](./js-utils.getnormalizedquery.md) | Returns a normalized representation of the passed query with default values. |
 |  [getObjectValueByDotSeparatedKey](./js-utils.getobjectvaluebydotseparatedkey.md) | Given a provided dot-separated key (e.g. <code>&quot;foo.bar&quot;</code>) and object extract the corresponding value. |
-|  [getQueryUtils](./js-utils.getqueryutils.md) |  |
+|  [getQueryUtils](./js-utils.getqueryutils.md) | <p>A collection of utility functions to process, validate, and transform query parameters.</p><p>- <code>getNumericValue</code> extracts a numeric value from a string if valid. - <code>getQueryValueString</code> retrieves the first string value from a string or an array of strings. - <code>getQueryValueArray</code> ensures a given input is returned as an array of strings.</p> |
 |  [getRootRelativeUrl](./js-utils.getrootrelativeurl.md) | Given a fully-qualified URL, returns a root-relative URL. |
 |  [isNullOrWhitespace](./js-utils.isnullorwhitespace.md) | Returns true if string is null, an empty string, or a string of whitespace characters. |
 |  [replaceArabicNumeralsWithPersianNumerals](./js-utils.replacearabicnumeralswithpersiannumerals.md) | Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals. |
