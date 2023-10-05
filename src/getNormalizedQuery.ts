@@ -5,9 +5,9 @@ import {
   getNumericValue,
   getQueryValueArray,
   getQueryValueString,
-  QueryParameterType,
 } from "./getQueryUtils";
 
+type QueryParameterType = "arrayNumber" | "arrayString" | "number" | "string";
 /**
  * Returns a normalized representation of the passed query with default values.
  *

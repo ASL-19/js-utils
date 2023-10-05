@@ -1,9 +1,3 @@
-export type QueryParameterType =
-  | "arrayNumber"
-  | "arrayString"
-  | "number"
-  | "string";
-
 export const getQueryValueString = (arrayOrString: Array<string> | string) =>
   Array.isArray(arrayOrString)
     ? // We can safely assume that a provided array will have at least one item due
