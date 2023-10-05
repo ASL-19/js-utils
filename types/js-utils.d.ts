@@ -43,7 +43,7 @@ export declare const cleanUrlQueryString: (url: string) => string;
 export declare const constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
     querySegments?: {
-        [key: string]: string | number | null | undefined;
+        [key: string]: string | number | string[] | number[] | null | undefined;
     } | undefined;
 }) => `/${string}`;
 
@@ -145,7 +145,7 @@ export declare const getNormalizedQuery: <NormalizedQueryType>({ defaults, query
      * this isn’t compatible with parameters with `null`/`undefined` default
      * values.
      */
-    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
+    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number[] ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends string[] ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
 }) => NormalizedQueryType;
 
 /**

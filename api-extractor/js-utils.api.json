@@ -229,7 +229,7 @@
             },
             {
               "kind": "Content",
-              "text": "({ path, querySegments, }: {\n    path: `/${string}`;\n    querySegments?: {\n        [key: string]: string | number | null | undefined;\n    } | undefined;\n}) => `/${string}`"
+              "text": "({ path, querySegments, }: {\n    path: `/${string}`;\n    querySegments?: {\n        [key: string]: string | number | string[] | number[] | null | undefined;\n    } | undefined;\n}) => `/${string}`"
             }
           ],
           "fileUrlPath": "src/constructUrl.ts",
@@ -287,7 +287,7 @@
               "text": "<string> | string) => string | undefined"
             }
           ],
-          "fileUrlPath": "src/getFirstStringOrString.ts",
+          "fileUrlPath": "dist/esm/getFirstStringOrString.d.ts",
           "isReadonly": true,
           "releaseTag": "Public",
           "name": "getFirstStringOrString",
@@ -325,6 +325,24 @@
             },
             {
               "kind": "Content",
+              "text": "<NormalizedQueryType[queryParameterName]> extends number[] ? \"arrayNumber\" : "
+            },
+            {
+              "kind": "Reference",
+              "text": "NonNullable",
+              "canonicalReference": "!NonNullable:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<NormalizedQueryType[queryParameterName]> extends string[] ? \"arrayString\" : "
+            },
+            {
+              "kind": "Reference",
+              "text": "NonNullable",
+              "canonicalReference": "!NonNullable:type"
+            },
+            {
+              "kind": "Content",
               "text": "<NormalizedQueryType[queryParameterName]> extends number ? \"number\" : \"string\"; };\n}) => NormalizedQueryType"
             }
           ],
@@ -334,7 +352,7 @@
           "name": "getNormalizedQuery",
           "variableTypeTokenRange": {
             "startIndex": 1,
-            "endIndex": 6
+            "endIndex": 10
           }
         },
         {

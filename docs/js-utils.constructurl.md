@@ -12,7 +12,7 @@ Format a root-relative URL based on provided path and query string key-value pai
 constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
     querySegments?: {
-        [key: string]: string | number | null | undefined;
+        [key: string]: string | number | string[] | number[] | null | undefined;
     } | undefined;
 }) => `/${string}`
 ```

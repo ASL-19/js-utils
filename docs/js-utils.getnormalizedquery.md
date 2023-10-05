@@ -12,7 +12,7 @@ Returns a normalized representation of the passed query with default values.
 getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
     defaults: NormalizedQueryType;
     query: ParsedUrlQuery;
-    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
+    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number[] ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends string[] ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
 }) => NormalizedQueryType
 ```
 
