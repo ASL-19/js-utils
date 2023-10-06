@@ -1,5 +1,8 @@
 import { match, P } from "ts-pattern";
 
+const nonEmptyStringPattern = P.string.minLength(1);
+const nonZeroNumberPattern = P.union(P.number.positive(), P.number.negative());
+
 /**
  * Format a root-relative URL based on provided path and query string key-value
  * pairs.
@@ -11,16 +14,34 @@ const constructUrl = ({
   querySegments = {},
 }: {
   path: `/${string}`;
-  querySegments?: { [key: string]: string | number | null | undefined };
+  querySegments?: {
+    [key: string]:
+      | Array<string>
+      | string
+      | Array<number>
+      | number
+      | null
+      | undefined;
+  };
 }) =>
   Object.keys(querySegments)
+    .sort()
     .reduce(
       (acc, key) =>
         match(querySegments[key])
           .with(
-            P.string.minLength(1),
-            P.union(P.number.positive(), P.number.negative()),
-            (segment) => `${acc}${key}=${segment}&`,
+            nonEmptyStringPattern,
+            nonZeroNumberPattern,
+            (value) => `${acc}${key}=${value}&`,
+          )
+          .with(
+            P.array(nonEmptyStringPattern),
+            P.array(nonZeroNumberPattern),
+            (segmentArr): string =>
+              segmentArr.reduce<string>(
+                (segmentAcc, value) => `${segmentAcc}${key}=${value}&`,
+                acc,
+              ),
           )
           .otherwise(() => acc),
       `${path}?`,
