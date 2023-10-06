@@ -43,7 +43,7 @@ export declare const cleanUrlQueryString: (url: string) => string;
 export declare const constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
     querySegments?: {
-        [key: string]: string | number | null | undefined;
+        [key: string]: string | number | string[] | number[] | null | undefined;
     } | undefined;
 }) => `/${string}`;
 
@@ -106,23 +106,15 @@ export declare const getFirstStringOrString: (arrayOrString?: Array<string> | st
  * Returns a normalized representation of the passed query with default values.
  *
  * @remarks
+ * It’s important to normalize the query before use because `ParsedUrlQuery`
+ * (returned by Node’s `querystring.parse()`, and e.g. exposed by Next.js in
+ * `getServerSideProps` and `useRouter().query`) can be an array if multiple
+ * query string parameters with the same key are in the URL. e.g.:
  *
- * Query values are converted to number if the corresponding default value is a
- * number; otherwise they will be typed string.
+ * - `?rating=true` → `{rating: "true"}`;
+ * - `?rating=true&rating=false` → `{rating: ["true", false"]}`
  *
- * 1. It’s important to normalize the query before use because the
- *    ParsedUrlQuery exposed by Next.js in getServerSideProps and
- *    useRouter().query can be an array if multiple query string parameters with
- *    the same key are in the URL. e.g.:
- *
- *    - `?rating=true` → `{rating: "true"}`;
- *    - `?rating=true&rating=false` → `{rating: ["true", false"]}`
- *
- *    This is easy to forget, but could cause runtime errors.
- *
- * 2. In the future the aforementioned defaults-driven auto-conversion may also
- *    support arrays of strings and arrays of numbers to support use cases like
- *    law_database_web’s multi-tag select).
+ * This is easy to forget, but could cause runtime errors.
  *
  * @public
  */
@@ -145,7 +137,7 @@ export declare const getNormalizedQuery: <NormalizedQueryType>({ defaults, query
      * this isn’t compatible with parameters with `null`/`undefined` default
      * values.
      */
-    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
+    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number[] ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends string[] ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
 }) => NormalizedQueryType;
 
 /**
