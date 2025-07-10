@@ -6,15 +6,15 @@
  * @packageDocumentation
  */
 
-export { default as cleanUrlQueryString } from "./cleanUrlQueryString";
-export { default as getRootRelativeUrl } from "./getRootRelativeUrl";
-export { default as isNullOrWhitespace } from "./isNullOrWhitespace";
-export { default as replaceArabicNumeralsWithPersianNumerals } from "./replaceArabicNumeralsWithPersianNumerals";
-export { default as underscoreCaseToCamelCase } from "./underscoreCaseToCamelCase";
-export { default as asType } from "./asType";
-export { default as getAbsoluteUrl } from "./getAbsoluteUrl";
-export { default as getFirstStringOrString } from "./getFirstStringOrString";
-export { default as getObjectValueByDotSeparatedKey } from "./getObjectValueByDotSeparatedKey";
-export { default as serverLog } from "./serverLog";
-export { default as constructUrl } from "./constructUrl";
-export { default as getNormalizedQuery } from "./getNormalizedQuery";
+export { default as cleanUrlQueryString } from "./cleanUrlQueryString.js";
+export { default as getRootRelativeUrl } from "./getRootRelativeUrl.js";
+export { default as isNullOrWhitespace } from "./isNullOrWhitespace.js";
+export { default as replaceArabicNumeralsWithPersianNumerals } from "./replaceArabicNumeralsWithPersianNumerals.js";
+export { default as underscoreCaseToCamelCase } from "./underscoreCaseToCamelCase.js";
+export { default as asType } from "./asType.js";
+export { default as getAbsoluteUrl } from "./getAbsoluteUrl.js";
+export { default as getFirstStringOrString } from "./getFirstStringOrString.js";
+export { default as getObjectValueByDotSeparatedKey } from "./getObjectValueByDotSeparatedKey.js";
+export { default as serverLog } from "./serverLog.js";
+export { default as constructUrl } from "./constructUrl.js";
+export { default as getNormalizedQuery } from "./getNormalizedQuery.js";

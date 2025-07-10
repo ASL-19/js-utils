@@ -23,27 +23,32 @@
     "dist/**/*.js",
     "types/**/*.d.ts"
   ],
-  "main": "dist/cjs/index.js",
+  "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "types": "types/js-utils.public.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js",
+      "types": "./types/js-utils.public.d.ts"
+    }
+  },
   "sideEffects": false,
   "scripts": {
     "api-extractor-check": "api-extractor run --verbose",
     "api-extractor-update": "api-extractor run --local --verbose && api-documenter markdown --input-folder ./api-extractor --output-folder ./docs",
-    "build-lint-test": "npm-run-all -l -p tsc-cjs tsc-esm -s lint-test",
+    "build-lint-test": "npm-run-all -l -p tsc-esm -s lint-test",
     "rm-dist": "rm -rf dist",
-    "dev": "npm-run-all -l -s package-changed -p tsc-cjs-watch tsc-esm-watch",
+    "dev": "npm-run-all -l -s package-changed -p tsc-esm-watch",
     "dev-lint-test": "run-s package-changed lint-test",
     "eslint-check": "eslint . --ext='js,ts,tsx'",
     "eslint-fix": "eslint . --ext='js,ts,tsx' --fix",
     "lint-test": "run-p -l api-extractor-check eslint-check prettier-check tsc-check",
     "package-changed": "package-changed",
     "prepublishOnly": "run-s rm-dist build-lint-test",
-    "prettier-check": "prettier --check .",
-    "prettier-fix": "prettier --write .",
+    "prettier-check": "prettier --config prettier.config.js --check .",
+    "prettier-fix": "prettier --config prettier.config.js --write .",
     "npm-check-updates": "npm-check-updates",
-    "tsc-cjs": "tsc --project tsconfig-cjs.json",
-    "tsc-cjs-watch": "tsc --project tsconfig-cjs.json --watch",
     "tsc-esm": "tsc --project tsconfig-esm.json",
     "tsc-esm-watch": "tsc --project tsconfig-esm.json --watch",
     "tsc-check": "tsc --noEmit"
