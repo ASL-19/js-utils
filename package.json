@@ -21,25 +21,19 @@
   },
   "files": [
     "dist/**/*.js",
-    "types/**/*.d.ts"
+    "dist/**/*.d.ts"
   ],
-  "main": "dist/esm/index.js",
-  "module": "dist/esm/index.js",
-  "types": "types/js-utils.public.d.ts",
   "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "default": "./dist/esm/index.js",
-      "types": "./types/js-utils.public.d.ts"
-    }
+    "default": "./dist/index.js",
+    "types": "./dist/index.d.ts"
   },
   "sideEffects": false,
   "scripts": {
     "api-extractor-check": "api-extractor run --verbose",
     "api-extractor-update": "api-extractor run --local --verbose && api-documenter markdown --input-folder ./api-extractor --output-folder ./docs",
-    "build-lint-test": "npm-run-all -l -p tsc-esm -s lint-test",
+    "build-lint-test": "npm-run-all -l -p tsc -s lint-test",
     "rm-dist": "rm -rf dist",
-    "dev": "npm-run-all -l -s package-changed -p tsc-esm-watch",
+    "dev": "npm-run-all -l -s package-changed -p tsc-watch",
     "dev-lint-test": "run-s package-changed lint-test",
     "eslint-check": "eslint . --ext='js,ts,tsx'",
     "eslint-fix": "eslint . --ext='js,ts,tsx' --fix",
@@ -49,8 +43,8 @@
     "prettier-check": "prettier --config prettier.config.js --check .",
     "prettier-fix": "prettier --config prettier.config.js --write .",
     "npm-check-updates": "npm-check-updates",
-    "tsc-esm": "tsc --project tsconfig-esm.json",
-    "tsc-esm-watch": "tsc --project tsconfig-esm.json --watch",
+    "tsc": "tsc --project tsconfig-esm.json",
+    "tsc-watch": "tsc --project tsconfig-esm.json --watch",
     "tsc-check": "tsc --noEmit"
   },
   "dependencies": {
