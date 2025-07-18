@@ -18,7 +18,7 @@
   "license": "GPL-3.0-or-later",
   "repository": "ASL-19/js-utils",
   "engines": {
-    "node": "22.x"
+    "node": ">=22"
   },
   "files": [
     "dist/**/*.js",
@@ -57,7 +57,7 @@
     "@asl-19/shared-package-configs": "^0.3.0",
     "@microsoft/api-documenter": "^7.26.29",
     "@microsoft/api-extractor": "^7.52.8",
-    "@types/node": "^22.15.33",
+    "@types/node": "^22.16.4",
     "eslint": "^9.31.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "npm-check-updates": "^18.0.1",
