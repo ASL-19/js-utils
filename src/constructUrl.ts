@@ -14,15 +14,10 @@ const constructUrl = ({
   querySegments = {},
 }: {
   path: `/${string}`;
-  querySegments?: {
-    [key: string]:
-      | Array<string>
-      | string
-      | Array<number>
-      | number
-      | null
-      | undefined;
-  };
+  querySegments?: Record<
+    string,
+    Array<string> | string | Array<number> | number | null | undefined
+  >;
 }) =>
   Object.keys(querySegments)
     .sort()

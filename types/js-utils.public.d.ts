@@ -42,9 +42,7 @@ export declare const cleanUrlQueryString: (url: string) => string;
  */
 export declare const constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
-    querySegments?: {
-        [key: string]: string | number | string[] | number[] | null | undefined;
-    } | undefined;
+    querySegments?: Record<string, Array<string> | string | Array<number> | number | null | undefined>;
 }) => `/${string}`;
 
 /**
@@ -137,7 +135,7 @@ export declare const getNormalizedQuery: <NormalizedQueryType>({ defaults, query
      * this isn’t compatible with parameters with `null`/`undefined` default
      * values.
      */
-    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number[] ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends string[] ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
+    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends Array<number> ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends Array<string> ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
 }) => NormalizedQueryType;
 
 /**
@@ -224,9 +222,9 @@ export declare const replaceArabicNumeralsWithPersianNumerals: (input: string) =
  * @public
  */
 export declare const serverLog: ({ description, path, statusCode, }: {
-    description?: string | undefined;
-    path?: string | undefined;
-    statusCode?: number | undefined;
+    description?: string;
+    path?: string;
+    statusCode?: number;
 }) => void;
 
 declare type Tree<T> = {

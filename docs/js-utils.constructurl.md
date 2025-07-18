@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [constructUrl](./js-utils.constructurl.md)
 
-## constructUrl variable
+## constructUrl() function
 
 Format a root-relative URL based on provided path and query string key-value pairs.
 
@@ -11,8 +11,45 @@ Format a root-relative URL based on provided path and query string key-value pai
 ```typescript
 constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
-    querySegments?: {
-        [key: string]: string | number | string[] | number[] | null | undefined;
-    } | undefined;
+    querySegments?: Record<string, Array<string> | string | Array<number> | number | null | undefined>;
 }) => `/${string}`
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+{ path, querySegments, }
+
+
+</td><td>
+
+{ path: \`/${string}\`; querySegments?: Record&lt;string, Array&lt;string&gt; \| string \| Array&lt;number&gt; \| number \| null \| undefined&gt;; }
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+\`/${string}\`
+

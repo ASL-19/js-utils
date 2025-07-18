@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [getAbsoluteUrl](./js-utils.getabsoluteurl.md)
 
-## getAbsoluteUrl variable
+## getAbsoluteUrl() function
 
 Given provided protocol + host string and root-relative URL string returns an absolute (fully-qualified) URL.
 
@@ -14,6 +14,44 @@ getAbsoluteUrl: ({ protocolAndHost, rootRelativeUrl, }: {
     rootRelativeUrl: string;
 }) => string
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+{ protocolAndHost, rootRelativeUrl, }
+
+
+</td><td>
+
+{ protocolAndHost: string; rootRelativeUrl: string; }
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+string
 
 ## Remarks
 

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.36.4",
+    "toolVersion": "7.52.8",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -173,109 +173,121 @@
       "preserveMemberOrder": false,
       "members": [
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!asType:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!asType:function(1)",
           "docComment": "/**\n * Cast an object to a specified data type.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "asType: "
+              "text": "asType: <T>(value: "
             },
             {
               "kind": "Content",
-              "text": "<T>(value: T) => T"
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "T"
             }
           ],
           "fileUrlPath": "src/asType.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
           "releaseTag": "Public",
-          "name": "asType",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "value",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "asType"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!cleanUrlQueryString:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!cleanUrlQueryString:function(1)",
           "docComment": "/**\n * Returns a URL with trailing `\"?\"` and `\"&\"` characters removed.\n *\n * @param url - URL\n *\n * @example\n * ```ts\n * cleanUrlQueryString(\"/foo?\")\n * // \"/foo\"\n *\n * cleanUrlQueryString(\"/foo?bar&\")\n * // \"/foo?bar\"\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "cleanUrlQueryString: "
+              "text": "cleanUrlQueryString: (url: "
             },
             {
               "kind": "Content",
-              "text": "(url: string) => string"
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
             }
           ],
           "fileUrlPath": "src/cleanUrlQueryString.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
           "releaseTag": "Public",
-          "name": "cleanUrlQueryString",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "url",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "cleanUrlQueryString"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!constructUrl:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!constructUrl:function(1)",
           "docComment": "/**\n * Format a root-relative URL based on provided path and query string key-value pairs.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "constructUrl: "
+              "text": "constructUrl: ({ path, querySegments, }: "
             },
             {
               "kind": "Content",
-              "text": "({ path, querySegments, }: {\n    path: `/${string}`;\n    querySegments?: {\n        [key: string]: string | number | string[] | number[] | null | undefined;\n    } | undefined;\n}) => `/${string}`"
-            }
-          ],
-          "fileUrlPath": "src/constructUrl.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "constructUrl",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!getAbsoluteUrl:var",
-          "docComment": "/**\n * Given provided protocol + host string and root-relative URL string returns an absolute (fully-qualified) URL.\n *\n * @remarks\n *\n * - `protocolAndHost` should look like `\"https://asl19.org\"`, with no trailing slash. In ASL19 Next.js projects this is probably `process.env.NEXT_PUBLIC_WEB_URL`. - `rootRelativeUrl` should start with `\"/\"`.\n *\n * @example\n * ```ts\n * getAbsoluteUrl({\n *  protocolAndHost: \"https://hello.com\",\n *  rootRelativeUrl: \"/foo\",\n * })\n * // \"https://hello.com/foo\"\n * ```\n *\n * @public\n */\n",
-          "excerptTokens": [
+              "text": "{\n    path: `/${string}`;\n    querySegments?: "
+            },
             {
-              "kind": "Content",
-              "text": "getAbsoluteUrl: "
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
             },
             {
               "kind": "Content",
-              "text": "({ protocolAndHost, rootRelativeUrl, }: {\n    protocolAndHost: string;\n    rootRelativeUrl: string;\n}) => string"
-            }
-          ],
-          "fileUrlPath": "src/getAbsoluteUrl.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "getAbsoluteUrl",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!getFirstStringOrString:var",
-          "docComment": "/**\n * Given an array or a string, return its first string element.\n *\n * @remarks\n *\n * This is useful for normalizing Next.js `router.query` (`ParsedUrlQuery`) values, which can be either a string or an array of strings.\n *\n * If possible you should use {@link getNormalizedQuery} (which uses this function internally) for this, but there may be special cases where it makes sense to use this function directly.\n *\n * @example\n * ```ts\n * getFirstStringOrString([\"foo1\",\"foo2\"])\n * // \"foo1\"\n *\n * getFirstStringOrString(\"foo1\")\n * // \"foo1\"\n * ```\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "getFirstStringOrString: "
-            },
-            {
-              "kind": "Content",
-              "text": "(arrayOrString?: "
+              "text": "<string, "
             },
             {
               "kind": "Reference",
@@ -284,30 +296,144 @@
             },
             {
               "kind": "Content",
-              "text": "<string> | string) => string | undefined"
+              "text": "<string> | string | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Array",
+              "canonicalReference": "!Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<number> | number | null | undefined>;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "`/${string}`"
+            }
+          ],
+          "fileUrlPath": "src/constructUrl.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ path, querySegments, }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 8
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "constructUrl"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!getAbsoluteUrl:function(1)",
+          "docComment": "/**\n * Given provided protocol + host string and root-relative URL string returns an absolute (fully-qualified) URL.\n *\n * @remarks\n *\n * - `protocolAndHost` should look like `\"https://asl19.org\"`, with no trailing slash. In ASL19 Next.js projects this is probably `process.env.NEXT_PUBLIC_WEB_URL`. - `rootRelativeUrl` should start with `\"/\"`.\n *\n * @example\n * ```ts\n * getAbsoluteUrl({\n *  protocolAndHost: \"https://hello.com\",\n *  rootRelativeUrl: \"/foo\",\n * })\n * // \"https://hello.com/foo\"\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getAbsoluteUrl: ({ protocolAndHost, rootRelativeUrl, }: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    protocolAndHost: string;\n    rootRelativeUrl: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            }
+          ],
+          "fileUrlPath": "src/getAbsoluteUrl.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ protocolAndHost, rootRelativeUrl, }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getAbsoluteUrl"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!getFirstStringOrString:function(1)",
+          "docComment": "/**\n * Given an array or a string, return its first string element.\n *\n * @remarks\n *\n * This is useful for normalizing Next.js `router.query` (`ParsedUrlQuery`) values, which can be either a string or an array of strings.\n *\n * If possible you should use {@link getNormalizedQuery} (which uses this function internally) for this, but there may be special cases where it makes sense to use this function directly.\n *\n * @example\n * ```ts\n * getFirstStringOrString([\"foo1\",\"foo2\"])\n * // \"foo1\"\n *\n * getFirstStringOrString(\"foo1\")\n * // \"foo1\"\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "getFirstStringOrString: (arrayOrString?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Array",
+              "canonicalReference": "!Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<string> | string"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "string | undefined"
             }
           ],
           "fileUrlPath": "src/getFirstStringOrString.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 4,
+            "endIndex": 5
+          },
           "releaseTag": "Public",
-          "name": "getFirstStringOrString",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 4
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "arrayOrString",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "getFirstStringOrString"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!getNormalizedQuery:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!getNormalizedQuery:function(1)",
           "docComment": "/**\n * Returns a normalized representation of the passed query with default values.\n *\n * @remarks\n *\n * It’s important to normalize the query before use because `ParsedUrlQuery` (returned by Node’s `querystring.parse()`, and e.g. exposed by Next.js in `getServerSideProps` and `useRouter().query`) can be an array if multiple query string parameters with the same key are in the URL. e.g.:\n *\n * - `?rating=true` → `{rating: \"true\"}`; - `?rating=true&rating=false` → `{rating: [\"true\", false\"]}`\n *\n * This is easy to forget, but could cause runtime errors.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "getNormalizedQuery: "
+              "text": "getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: "
             },
             {
               "kind": "Content",
-              "text": "<NormalizedQueryType>({ defaults, query, types, }: {\n    defaults: NormalizedQueryType;\n    query: "
+              "text": "{\n    defaults: NormalizedQueryType;\n    query: "
             },
             {
               "kind": "Reference",
@@ -325,7 +451,16 @@
             },
             {
               "kind": "Content",
-              "text": "<NormalizedQueryType[queryParameterName]> extends number[] ? \"arrayNumber\" : "
+              "text": "<NormalizedQueryType[queryParameterName]> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Array",
+              "canonicalReference": "!Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<number> ? \"arrayNumber\" : "
             },
             {
               "kind": "Reference",
@@ -334,7 +469,16 @@
             },
             {
               "kind": "Content",
-              "text": "<NormalizedQueryType[queryParameterName]> extends string[] ? \"arrayString\" : "
+              "text": "<NormalizedQueryType[queryParameterName]> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "Array",
+              "canonicalReference": "!Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<string> ? \"arrayString\" : "
             },
             {
               "kind": "Reference",
@@ -343,30 +487,61 @@
             },
             {
               "kind": "Content",
-              "text": "<NormalizedQueryType[queryParameterName]> extends number ? \"number\" : \"string\"; };\n}) => NormalizedQueryType"
+              "text": "<NormalizedQueryType[queryParameterName]> extends number ? \"number\" : \"string\"; };\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "NormalizedQueryType"
             }
           ],
           "fileUrlPath": "src/getNormalizedQuery.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 15,
+            "endIndex": 16
+          },
           "releaseTag": "Public",
-          "name": "getNormalizedQuery",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 10
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ defaults, query, types, }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 14
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "NormalizedQueryType",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "getNormalizedQuery"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!getObjectValueByDotSeparatedKey:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!getObjectValueByDotSeparatedKey:function(1)",
           "docComment": "/**\n * Given a provided dot-separated key (e.g. `\"foo.bar\"`) and object extract the corresponding value.\n *\n * @example\n * ```ts\n *\n * const object = {\n *   foo: {\n *     bar: \"Hello\"\n *   }\n * };\n *\n * getObjectValueByDotSeparatedKey({\n *   dotSeparatedKey: \"foo.bar\",\n *   object,\n * })\n * // Hello\n *\n * getObjectValueByDotSeparatedKey({\n *   dotSeparatedKey: \"foo\",\n *   object,\n * })\n * // { bar: \"Hello\"}\n *\n * getObjectValueByDotSeparatedKey({\n *   dotSeparatedKey: \"abc\",\n *   object,\n * })\n * // undefined\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "getObjectValueByDotSeparatedKey: "
+              "text": "getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, object, }: "
             },
             {
               "kind": "Content",
-              "text": "<Leaf>({ dotSeparatedKey, object, }: {\n    dotSeparatedKey: string;\n    object: "
+              "text": "{\n    dotSeparatedKey: string;\n    object: "
             },
             {
               "kind": "Reference",
@@ -375,7 +550,11 @@
             },
             {
               "kind": "Content",
-              "text": "<Leaf>;\n}) => "
+              "text": "<Leaf>;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
             },
             {
               "kind": "Reference",
@@ -388,128 +567,241 @@
             }
           ],
           "fileUrlPath": "src/getObjectValueByDotSeparatedKey.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 7
+          },
           "releaseTag": "Public",
-          "name": "getObjectValueByDotSeparatedKey",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 6
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ dotSeparatedKey, object, }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "Leaf",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "getObjectValueByDotSeparatedKey"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!getRootRelativeUrl:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!getRootRelativeUrl:function(1)",
           "docComment": "/**\n * Given a fully-qualified URL, returns a root-relative URL.\n *\n * @example\n * ```ts\n * getRootRelativeUrl(\"https://asl19.org/\")\n * // \"/\"\n * getRootRelativeUrl(\"https://asl19.org/foo\")\n * // \"/foo\"\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "getRootRelativeUrl: "
+              "text": "getRootRelativeUrl: (fullyQualifiedUrl: "
             },
             {
               "kind": "Content",
-              "text": "(fullyQualifiedUrl: string) => string"
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
             }
           ],
           "fileUrlPath": "src/getRootRelativeUrl.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
           "releaseTag": "Public",
-          "name": "getRootRelativeUrl",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "fullyQualifiedUrl",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getRootRelativeUrl"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!isNullOrWhitespace:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!isNullOrWhitespace:function(1)",
           "docComment": "/**\n * Returns true if string is null, an empty string, or a string of whitespace characters.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "isNullOrWhitespace: "
+              "text": "isNullOrWhitespace: (input: "
             },
             {
               "kind": "Content",
-              "text": "(input: string) => boolean"
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
             }
           ],
           "fileUrlPath": "src/isNullOrWhitespace.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
           "releaseTag": "Public",
-          "name": "isNullOrWhitespace",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "input",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isNullOrWhitespace"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!replaceArabicNumeralsWithPersianNumerals:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!replaceArabicNumeralsWithPersianNumerals:function(1)",
           "docComment": "/**\n * Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "replaceArabicNumeralsWithPersianNumerals: "
+              "text": "replaceArabicNumeralsWithPersianNumerals: (input: "
             },
             {
               "kind": "Content",
-              "text": "(input: string) => string"
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
             }
           ],
           "fileUrlPath": "src/replaceArabicNumeralsWithPersianNumerals.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
           "releaseTag": "Public",
-          "name": "replaceArabicNumeralsWithPersianNumerals",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "input",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "replaceArabicNumeralsWithPersianNumerals"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!serverLog:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!serverLog:function(1)",
           "docComment": "/**\n * Logs a formatted message based on the provided description, HTTP status code, and path.\n *\n * @remarks\n *\n * Should only be used on the server — will output a warning and return early if called from the browser.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "serverLog: "
+              "text": "serverLog: ({ description, path, statusCode, }: "
             },
             {
               "kind": "Content",
-              "text": "({ description, path, statusCode, }: {\n    description?: string | undefined;\n    path?: string | undefined;\n    statusCode?: number | undefined;\n}) => void"
+              "text": "{\n    description?: string;\n    path?: string;\n    statusCode?: number;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "void"
             }
           ],
           "fileUrlPath": "src/serverLog.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
           "releaseTag": "Public",
-          "name": "serverLog",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ description, path, statusCode, }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "serverLog"
         },
         {
-          "kind": "Variable",
-          "canonicalReference": "@asl-19/js-utils!underscoreCaseToCamelCase:var",
+          "kind": "Function",
+          "canonicalReference": "@asl-19/js-utils!underscoreCaseToCamelCase:function(1)",
           "docComment": "/**\n * Given an underscore-cased string, returns a camel-cased string.\n *\n * @example\n * ```ts\n * - underscoreCaseToCamelCase(\"foo_bar\")\n * // \"fooBar\"\n * - underscoreCaseToCamelCase(\"foo\")\n * // \"foo\"\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "underscoreCaseToCamelCase: "
+              "text": "underscoreCaseToCamelCase: (underscoreCasedString: "
             },
             {
               "kind": "Content",
-              "text": "(underscoreCasedString: string) => string"
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
             }
           ],
           "fileUrlPath": "src/underscoreCaseToCamelCase.ts",
-          "isReadonly": true,
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
           "releaseTag": "Public",
-          "name": "underscoreCaseToCamelCase",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "underscoreCasedString",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "underscoreCaseToCamelCase"
         }
       ]
     }

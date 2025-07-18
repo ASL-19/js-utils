@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [cleanUrlQueryString](./js-utils.cleanurlquerystring.md)
 
-## cleanUrlQueryString variable
+## cleanUrlQueryString() function
 
 Returns a URL with trailing `"?"` and `"&"` characters removed.
 
@@ -11,6 +11,46 @@ Returns a URL with trailing `"?"` and `"&"` characters removed.
 ```typescript
 cleanUrlQueryString: (url: string) => string
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+url
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+URL
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+string
 
 ## Example
 

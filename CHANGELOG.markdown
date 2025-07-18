@@ -17,7 +17,6 @@
 ### Changes
 
 - Added new functions [[#19](https://github.com/ASL-19/js-utils/pull/19)]:
-
   - [`asType`](./docs/js-utils.astype.md)
   - [`constructUrl`](./docs/js-utils.constructurl.md)
   - [`getAbsoluteUrl`](./docs/js-utils.getabsoluteurl.md)

@@ -15,9 +15,7 @@ export const cleanUrlQueryString: (url: string) => string;
 // @public
 export const constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
-    querySegments?: {
-        [key: string]: string | number | string[] | number[] | null | undefined;
-    } | undefined;
+    querySegments?: Record<string, Array<string> | string | Array<number> | number | null | undefined>;
 }) => `/${string}`;
 
 // @public
@@ -33,7 +31,7 @@ export const getFirstStringOrString: (arrayOrString?: Array<string> | string) =>
 export const getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
     defaults: NormalizedQueryType;
     query: ParsedUrlQuery;
-    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number[] ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends string[] ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
+    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends Array<number> ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends Array<string> ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
 }) => NormalizedQueryType;
 
 // Warning: (ae-forgotten-export) The symbol "Tree" needs to be exported by the entry point index.d.ts
@@ -55,9 +53,9 @@ export const replaceArabicNumeralsWithPersianNumerals: (input: string) => string
 
 // @public
 export const serverLog: ({ description, path, statusCode, }: {
-    description?: string | undefined;
-    path?: string | undefined;
-    statusCode?: number | undefined;
+    description?: string;
+    path?: string;
+    statusCode?: number;
 }) => void;
 
 // @public
