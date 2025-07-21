@@ -16,10 +16,7 @@
     "apiJsonFilePath": "<projectFolder>/api-extractor/js-utils.api.json"
   },
   "dtsRollup": {
-    "enabled": true,
-    "untrimmedFilePath": "<projectFolder>/types/<unscopedPackageName>.d.ts",
-    "betaTrimmedFilePath": "<projectFolder>/types/<unscopedPackageName>.beta.d.ts",
-    "publicTrimmedFilePath": "<projectFolder>/types/<unscopedPackageName>.public.d.ts"
+    "enabled": false
   },
   "messages": {
     "compilerMessageReporting": {
