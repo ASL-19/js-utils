@@ -296,7 +296,7 @@
             },
             {
               "kind": "Content",
-              "text": "<string> | string | "
+              "text": "<number> | "
             },
             {
               "kind": "Reference",
@@ -305,7 +305,7 @@
             },
             {
               "kind": "Content",
-              "text": "<number> | number | null | undefined>;\n}"
+              "text": "<string> | null | number | string | undefined>;\n}"
             },
             {
               "kind": "Content",

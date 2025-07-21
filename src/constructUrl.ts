@@ -16,7 +16,7 @@ const constructUrl = ({
   path: `/${string}`;
   querySegments?: Record<
     string,
-    Array<string> | string | Array<number> | number | null | undefined
+    Array<number> | Array<string> | null | number | string | undefined
   >;
 }) =>
   Object.keys(querySegments)

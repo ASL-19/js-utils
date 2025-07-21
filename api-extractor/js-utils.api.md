@@ -15,7 +15,7 @@ export const cleanUrlQueryString: (url: string) => string;
 // @public
 export const constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
-    querySegments?: Record<string, Array<string> | string | Array<number> | number | null | undefined>;
+    querySegments?: Record<string, Array<number> | Array<string> | null | number | string | undefined>;
 }) => `/${string}`;
 
 // @public

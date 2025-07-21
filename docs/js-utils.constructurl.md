@@ -11,7 +11,7 @@ Format a root-relative URL based on provided path and query string key-value pai
 ```typescript
 constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
-    querySegments?: Record<string, Array<string> | string | Array<number> | number | null | undefined>;
+    querySegments?: Record<string, Array<number> | Array<string> | null | number | string | undefined>;
 }) => `/${string}`
 ```
 
@@ -40,7 +40,7 @@ Description
 
 </td><td>
 
-{ path: \`/${string}\`; querySegments?: Record&lt;string, Array&lt;string&gt; \| string \| Array&lt;number&gt; \| number \| null \| undefined&gt;; }
+{ path: \`/${string}\`; querySegments?: Record&lt;string, Array&lt;number&gt; \| Array&lt;string&gt; \| null \| number \| string \| undefined&gt;; }
 
 
 </td><td>

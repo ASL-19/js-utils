@@ -42,7 +42,7 @@ export declare const cleanUrlQueryString: (url: string) => string;
  */
 export declare const constructUrl: ({ path, querySegments, }: {
     path: `/${string}`;
-    querySegments?: Record<string, Array<string> | string | Array<number> | number | null | undefined>;
+    querySegments?: Record<string, Array<number> | Array<string> | null | number | string | undefined>;
 }) => `/${string}`;
 
 /**
@@ -228,7 +228,7 @@ export declare const serverLog: ({ description, path, statusCode, }: {
 }) => void;
 
 declare type Tree<T> = {
-    [key: string | number]: T | Tree<T> | undefined;
+    [key: number | string]: T | Tree<T> | undefined;
 };
 
 /**
