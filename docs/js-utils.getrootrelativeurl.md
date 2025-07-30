@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [getRootRelativeUrl](./js-utils.getrootrelativeurl.md)
 
-## getRootRelativeUrl variable
+## getRootRelativeUrl() function
 
 Given a fully-qualified URL, returns a root-relative URL.
 
@@ -11,6 +11,44 @@ Given a fully-qualified URL, returns a root-relative URL.
 ```typescript
 getRootRelativeUrl: (fullyQualifiedUrl: string) => string
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+fullyQualifiedUrl
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+string
 
 ## Example
 

@@ -1,5 +1,13 @@
 # @asl-19/js-utils changelog
 
+## [0.4.0](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.4.0+is%3Aclosed) [2025-07-30]
+
+- Make package ESM-only, update dependencies [[#27](https://github.com/ASL-19/js-utils/pull/27)]
+
+## [0.3.3](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.3.3+is%3Aclosed) [2023-10-06]
+
+- Update `constructUrl` and `getNormalizedQuery` to accept `Array<string>` and `Array<number>` query segments [[#25](https://github.com/ASL-19/js-utils/pull/25)]
+
 ## [0.3.2](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.3.2+is%3Aclosed) [2023-09-21]
 
 ### Changes
@@ -17,7 +25,6 @@
 ### Changes
 
 - Added new functions [[#19](https://github.com/ASL-19/js-utils/pull/19)]:
-
   - [`asType`](./docs/js-utils.astype.md)
   - [`constructUrl`](./docs/js-utils.constructurl.md)
   - [`getAbsoluteUrl`](./docs/js-utils.getabsoluteurl.md)

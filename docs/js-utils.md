@@ -8,20 +8,150 @@ A collection of plain JavaScript utility functions for ASL19 projects.
 
 These functions don’t rely on DOM, React, or React Native APIs.
 
-## Variables
+## Functions
 
-|  Variable | Description |
-|  --- | --- |
-|  [asType](./js-utils.astype.md) | Cast an object to a specified data type. |
-|  [cleanUrlQueryString](./js-utils.cleanurlquerystring.md) | Returns a URL with trailing <code>&quot;?&quot;</code> and <code>&quot;&amp;&quot;</code> characters removed. |
-|  [constructUrl](./js-utils.constructurl.md) | Format a root-relative URL based on provided path and query string key-value pairs. |
-|  [getAbsoluteUrl](./js-utils.getabsoluteurl.md) | Given provided protocol + host string and root-relative URL string returns an absolute (fully-qualified) URL. |
-|  [getFirstStringOrString](./js-utils.getfirststringorstring.md) | Given an array or a string, return its first string element. |
-|  [getNormalizedQuery](./js-utils.getnormalizedquery.md) | Returns a normalized representation of the passed query with default values. |
-|  [getObjectValueByDotSeparatedKey](./js-utils.getobjectvaluebydotseparatedkey.md) | Given a provided dot-separated key (e.g. <code>&quot;foo.bar&quot;</code>) and object extract the corresponding value. |
-|  [getRootRelativeUrl](./js-utils.getrootrelativeurl.md) | Given a fully-qualified URL, returns a root-relative URL. |
-|  [isNullOrWhitespace](./js-utils.isnullorwhitespace.md) | Returns true if string is null, an empty string, or a string of whitespace characters. |
-|  [replaceArabicNumeralsWithPersianNumerals](./js-utils.replacearabicnumeralswithpersiannumerals.md) | Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals. |
-|  [serverLog](./js-utils.serverlog.md) | Logs a formatted message based on the provided description, HTTP status code, and path. |
-|  [underscoreCaseToCamelCase](./js-utils.underscorecasetocamelcase.md) | Given an underscore-cased string, returns a camel-cased string. |
+<table><thead><tr><th>
+
+Function
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[asType(value)](./js-utils.astype.md)
+
+
+</td><td>
+
+Cast an object to a specified data type.
+
+
+</td></tr>
+<tr><td>
+
+[cleanUrlQueryString(url)](./js-utils.cleanurlquerystring.md)
+
+
+</td><td>
+
+Returns a URL with trailing `"?"` and `"&"` characters removed.
+
+
+</td></tr>
+<tr><td>
+
+[constructUrl({ path, querySegments, })](./js-utils.constructurl.md)
+
+
+</td><td>
+
+Format a root-relative URL based on provided path and query string key-value pairs.
+
+
+</td></tr>
+<tr><td>
+
+[getAbsoluteUrl({ protocolAndHost, rootRelativeUrl, })](./js-utils.getabsoluteurl.md)
+
+
+</td><td>
+
+Given provided protocol + host string and root-relative URL string returns an absolute (fully-qualified) URL.
+
+
+</td></tr>
+<tr><td>
+
+[getFirstStringOrString(arrayOrString)](./js-utils.getfirststringorstring.md)
+
+
+</td><td>
+
+Given an array or a string, return its first string element.
+
+
+</td></tr>
+<tr><td>
+
+[getNormalizedQuery({ defaults, query, types, })](./js-utils.getnormalizedquery.md)
+
+
+</td><td>
+
+Returns a normalized representation of the passed query with default values.
+
+
+</td></tr>
+<tr><td>
+
+[getObjectValueByDotSeparatedKey({ dotSeparatedKey, object, })](./js-utils.getobjectvaluebydotseparatedkey.md)
+
+
+</td><td>
+
+Given a provided dot-separated key (e.g. `"foo.bar"`<!-- -->) and object extract the corresponding value.
+
+
+</td></tr>
+<tr><td>
+
+[getRootRelativeUrl(fullyQualifiedUrl)](./js-utils.getrootrelativeurl.md)
+
+
+</td><td>
+
+Given a fully-qualified URL, returns a root-relative URL.
+
+
+</td></tr>
+<tr><td>
+
+[isNullOrWhitespace(input)](./js-utils.isnullorwhitespace.md)
+
+
+</td><td>
+
+Returns true if string is null, an empty string, or a string of whitespace characters.
+
+
+</td></tr>
+<tr><td>
+
+[replaceArabicNumeralsWithPersianNumerals(input)](./js-utils.replacearabicnumeralswithpersiannumerals.md)
+
+
+</td><td>
+
+Replace Arabic (Hindu–Arabic/Western Arabic/Latin) numerals with Persian (Perso-Arabic) numerals.
+
+
+</td></tr>
+<tr><td>
+
+[serverLog({ description, path, statusCode, })](./js-utils.serverlog.md)
+
+
+</td><td>
+
+Logs a formatted message based on the provided description, HTTP status code, and path.
+
+
+</td></tr>
+<tr><td>
+
+[underscoreCaseToCamelCase(underscoreCasedString)](./js-utils.underscorecasetocamelcase.md)
+
+
+</td><td>
+
+Given an underscore-cased string, returns a camel-cased string.
+
+
+</td></tr>
+</tbody></table>
 

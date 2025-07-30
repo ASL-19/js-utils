@@ -6,7 +6,7 @@
  */
 const isNullOrWhitespace = (input: string) => {
   if (typeof input === "string") {
-    return !input || !input.trim();
+    return !input?.trim();
   }
   return true;
 };

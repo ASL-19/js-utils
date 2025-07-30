@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [getObjectValueByDotSeparatedKey](./js-utils.getobjectvaluebydotseparatedkey.md)
 
-## getObjectValueByDotSeparatedKey variable
+## getObjectValueByDotSeparatedKey() function
 
 Given a provided dot-separated key (e.g. `"foo.bar"`<!-- -->) and object extract the corresponding value.
 
@@ -14,6 +14,44 @@ getObjectValueByDotSeparatedKey: <Leaf>({ dotSeparatedKey, object, }: {
     object: Tree<Leaf>;
 }) => Tree<Leaf>
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+{ dotSeparatedKey, object, }
+
+
+</td><td>
+
+{ dotSeparatedKey: string; object: Tree&lt;Leaf&gt;; }
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+Tree&lt;Leaf&gt;
 
 ## Example
 

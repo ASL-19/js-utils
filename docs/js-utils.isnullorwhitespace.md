@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [isNullOrWhitespace](./js-utils.isnullorwhitespace.md)
 
-## isNullOrWhitespace variable
+## isNullOrWhitespace() function
 
 Returns true if string is null, an empty string, or a string of whitespace characters.
 
@@ -11,3 +11,42 @@ Returns true if string is null, an empty string, or a string of whitespace chara
 ```typescript
 isNullOrWhitespace: (input: string) => boolean
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+input
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+boolean
+
