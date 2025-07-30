@@ -21,7 +21,10 @@
     }
   ],
   "license": "GPL-3.0-or-later",
-  "repository": "ASL-19/js-utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ASL-19/js-utils.git"
+  },
   "engines": {
     "node": ">=22"
   },
