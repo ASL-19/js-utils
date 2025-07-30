@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [underscoreCaseToCamelCase](./js-utils.underscorecasetocamelcase.md)
 
-## underscoreCaseToCamelCase variable
+## underscoreCaseToCamelCase() function
 
 Given an underscore-cased string, returns a camel-cased string.
 
@@ -11,6 +11,44 @@ Given an underscore-cased string, returns a camel-cased string.
 ```typescript
 underscoreCaseToCamelCase: (underscoreCasedString: string) => string
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+underscoreCasedString
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+string
 
 ## Example
 

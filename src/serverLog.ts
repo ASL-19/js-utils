@@ -4,7 +4,7 @@ const datePartsRegExp =
 const getFormattedDateTime = () => {
   const date = new Date();
 
-  const datePartsMatch = date.toISOString().match(datePartsRegExp);
+  const datePartsMatch = datePartsRegExp.exec(date.toISOString());
 
   return datePartsMatch &&
     typeof datePartsMatch.groups === "object" &&
@@ -51,7 +51,7 @@ const serverLog = ({
       : `[${getFormattedDateTime()}] `) +
     (statusCode && description
       ? `${statusCode}: ${description}`
-      : statusCode ?? description ?? "")
+      : (statusCode ?? description ?? ""))
   ).trim();
 
   if (statusCode && statusCode >= 400 && statusCode < 500) {

@@ -4,9 +4,9 @@
     "outDir": "dist"
   },
   "include": [
+    "*.mjs",
     "*.js",
     "*.ts",
-    ".eslintrc.js",
     "src/**/*.ts*"
   ]
 }

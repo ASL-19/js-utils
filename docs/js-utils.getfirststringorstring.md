@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [getFirstStringOrString](./js-utils.getfirststringorstring.md)
 
-## getFirstStringOrString variable
+## getFirstStringOrString() function
 
 Given an array or a string, return its first string element.
 
@@ -12,11 +12,51 @@ Given an array or a string, return its first string element.
 getFirstStringOrString: (arrayOrString?: Array<string> | string) => string | undefined
 ```
 
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+arrayOrString
+
+
+</td><td>
+
+Array&lt;string&gt; \| string
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+string \| undefined
+
 ## Remarks
 
 This is useful for normalizing Next.js `router.query` (`ParsedUrlQuery`<!-- -->) values, which can be either a string or an array of strings.
 
-If possible you should use [getNormalizedQuery](./js-utils.getnormalizedquery.md) (which uses this function internally) for this, but there may be special cases where it makes sense to use this function directly.
+If possible you should use [getNormalizedQuery()](./js-utils.getnormalizedquery.md) (which uses this function internally) for this, but there may be special cases where it makes sense to use this function directly.
 
 ## Example
 

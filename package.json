@@ -1,6 +1,7 @@
 {
   "name": "@asl-19/js-utils",
   "version": "0.3.3",
+  "type": "module",
   "description": "Shared JavaScript utility functions for ASL19 projects",
   "contributors": [
     {
@@ -17,52 +18,51 @@
   "license": "GPL-3.0-or-later",
   "repository": "ASL-19/js-utils",
   "engines": {
-    "node": ">= 18"
+    "node": ">=22"
   },
   "files": [
     "dist/**/*.js",
-    "types/**/*.d.ts"
+    "dist/**/*.d.ts"
   ],
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "types/js-utils.public.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "default": "./dist/index.js"
+  },
   "sideEffects": false,
   "scripts": {
     "api-extractor-check": "api-extractor run --verbose",
     "api-extractor-update": "api-extractor run --local --verbose && api-documenter markdown --input-folder ./api-extractor --output-folder ./docs",
-    "build-lint-test": "npm-run-all -l -p tsc-cjs tsc-esm -s lint-test",
+    "build-lint-test": "npm-run-all -l -p tsc -s lint-test",
     "rm-dist": "rm -rf dist",
-    "dev": "npm-run-all -l -s package-changed -p tsc-cjs-watch tsc-esm-watch",
+    "dev": "npm-run-all -l -s package-changed -p tsc-watch",
     "dev-lint-test": "run-s package-changed lint-test",
     "eslint-check": "eslint . --ext='js,ts,tsx'",
     "eslint-fix": "eslint . --ext='js,ts,tsx' --fix",
     "lint-test": "run-p -l api-extractor-check eslint-check prettier-check tsc-check",
     "package-changed": "package-changed",
     "prepublishOnly": "run-s rm-dist build-lint-test",
-    "prettier-check": "prettier --check .",
-    "prettier-fix": "prettier --write .",
+    "prettier-check": "prettier --config prettier.config.js --check .",
+    "prettier-fix": "prettier --config prettier.config.js --write .",
     "npm-check-updates": "npm-check-updates",
-    "tsc-cjs": "tsc --project tsconfig-cjs.json",
-    "tsc-cjs-watch": "tsc --project tsconfig-cjs.json --watch",
-    "tsc-esm": "tsc --project tsconfig-esm.json",
-    "tsc-esm-watch": "tsc --project tsconfig-esm.json --watch",
+    "tsc": "tsc --project tsconfig-esm.json",
+    "tsc-watch": "tsc --project tsconfig-esm.json --watch",
     "tsc-check": "tsc --noEmit"
   },
   "dependencies": {
-    "ts-pattern": "^5.0.0"
+    "ts-pattern": "^5.7.1"
   },
   "devDependencies": {
-    "@asl-19/eslint-config": "^0.8.0",
+    "@asl-19/eslint-config": "^0.9.0",
     "@asl-19/shared-package-configs": "^0.3.0",
-    "@microsoft/api-documenter": "^7.22.33",
-    "@microsoft/api-extractor": "^7.36.4",
-    "@types/node": "^20.5.7",
-    "eslint": "^8.48.0",
+    "@microsoft/api-documenter": "^7.26.29",
+    "@microsoft/api-extractor": "^7.52.8",
+    "@types/node": "^22.16.4",
+    "eslint": "^9.31.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "npm-check-updates": "^16.13.2",
-    "npm-run-all2": "^6.0.6",
+    "npm-check-updates": "^18.0.1",
+    "npm-run-all2": "^8.0.4",
     "package-changed": "^3.0.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
   }
 }

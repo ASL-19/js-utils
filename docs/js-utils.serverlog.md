@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [serverLog](./js-utils.serverlog.md)
 
-## serverLog variable
+## serverLog() function
 
 Logs a formatted message based on the provided description, HTTP status code, and path.
 
@@ -10,11 +10,49 @@ Logs a formatted message based on the provided description, HTTP status code, an
 
 ```typescript
 serverLog: ({ description, path, statusCode, }: {
-    description?: string | undefined;
-    path?: string | undefined;
-    statusCode?: number | undefined;
+    description?: string;
+    path?: string;
+    statusCode?: number;
 }) => void
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+{ description, path, statusCode, }
+
+
+</td><td>
+
+{ description?: string; path?: string; statusCode?: number; }
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+void
 
 ## Remarks
 

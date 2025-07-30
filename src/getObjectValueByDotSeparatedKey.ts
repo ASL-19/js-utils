@@ -1,5 +1,5 @@
 type Tree<T> = {
-  [key: string | number]: T | Tree<T> | undefined;
+  [key: number | string]: T | Tree<T> | undefined;
 };
 
 /**

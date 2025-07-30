@@ -2,7 +2,7 @@
 
 [Home](./index.md) &gt; [@asl-19/js-utils](./js-utils.md) &gt; [getNormalizedQuery](./js-utils.getnormalizedquery.md)
 
-## getNormalizedQuery variable
+## getNormalizedQuery() function
 
 Returns a normalized representation of the passed query with default values.
 
@@ -12,9 +12,47 @@ Returns a normalized representation of the passed query with default values.
 getNormalizedQuery: <NormalizedQueryType>({ defaults, query, types, }: {
     defaults: NormalizedQueryType;
     query: ParsedUrlQuery;
-    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends number[] ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends string[] ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
+    types: { [queryParameterName in keyof NormalizedQueryType]: NonNullable<NormalizedQueryType[queryParameterName]> extends Array<number> ? "arrayNumber" : NonNullable<NormalizedQueryType[queryParameterName]> extends Array<string> ? "arrayString" : NonNullable<NormalizedQueryType[queryParameterName]> extends number ? "number" : "string"; };
 }) => NormalizedQueryType
 ```
+
+## Parameters
+
+<table><thead><tr><th>
+
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+{ defaults, query, types, }
+
+
+</td><td>
+
+{ defaults: NormalizedQueryType; query: ParsedUrlQuery; types: { \[queryParameterName in keyof NormalizedQueryType\]: NonNullable&lt;NormalizedQueryType\[queryParameterName\]&gt; extends Array&lt;number&gt; ? "arrayNumber" : NonNullable&lt;NormalizedQueryType\[queryParameterName\]&gt; extends Array&lt;string&gt; ? "arrayString" : NonNullable&lt;NormalizedQueryType\[queryParameterName\]&gt; extends number ? "number" : "string"; }; }
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
+
+**Returns:**
+
+NormalizedQueryType
 
 ## Remarks
 
