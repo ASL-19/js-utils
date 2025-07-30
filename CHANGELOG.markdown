@@ -1,5 +1,9 @@
 # @asl-19/js-utils changelog
 
+## [0.4.1](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.4.1+is%3Aclosed) [2025-07-30]
+
+- Update package.json repository format [[#29](https://github.com/ASL-19/js-utils/pull/29)]
+
 ## [0.4.0](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.4.0+is%3Aclosed) [2025-07-30]
 
 - Make package ESM-only, update dependencies [[#27](https://github.com/ASL-19/js-utils/pull/27)]
