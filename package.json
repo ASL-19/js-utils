@@ -1,6 +1,6 @@
 {
   "name": "@asl-19/js-utils",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "type": "module",
   "description": "Shared JavaScript utility functions for ASL19 projects",
   "contributors": [
@@ -12,6 +12,11 @@
     {
       "name": "Min Van",
       "email": "min@asl19.org",
+      "url": "https://asl19.org/"
+    },
+    {
+      "name": "Susan Wilson",
+      "email": "susan@asl19.org",
       "url": "https://asl19.org/"
     }
   ],
