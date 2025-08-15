@@ -1,5 +1,9 @@
 # @asl-19/js-utils changelog
 
+## [1.0.0](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A1.0.0+is%3Aclosed) [2025-08-15]
+
+- Remove @asl-19/shared-package-configs, update configs, misc. cleanup [[#31](https://github.com/ASL-19/js-utils/pull/31)]
+
 ## [0.4.1](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A0.4.1+is%3Aclosed) [2025-07-30]
 
 - Update package.json repository format [[#29](https://github.com/ASL-19/js-utils/pull/29)]
