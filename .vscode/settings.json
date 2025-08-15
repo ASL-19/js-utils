@@ -2,6 +2,7 @@
   "cSpell.words": [
     "destructure",
     "heaslip",
+    "nodenext",
     "Perso",
     "rushstack",
     "tsdoc",
@@ -42,8 +43,8 @@
     "api-extractor/**/*": true,
     "CHANGELOG": true,
     "docs/**/*": true,
-    "LICENSE": true,
-    "types/**/*": true
+    "package-lock.json": true,
+    "LICENSE": true
   },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

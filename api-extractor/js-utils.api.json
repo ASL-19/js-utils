@@ -194,7 +194,7 @@
               "text": "T"
             }
           ],
-          "fileUrlPath": "src/asType.ts",
+          "fileUrlPath": "dist/asType.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 3,
             "endIndex": 4
@@ -248,7 +248,7 @@
               "text": "string"
             }
           ],
-          "fileUrlPath": "src/cleanUrlQueryString.ts",
+          "fileUrlPath": "dist/cleanUrlQueryString.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 3,
             "endIndex": 4
@@ -316,7 +316,7 @@
               "text": "`/${string}`"
             }
           ],
-          "fileUrlPath": "src/constructUrl.ts",
+          "fileUrlPath": "dist/constructUrl.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 9,
             "endIndex": 10
@@ -357,7 +357,7 @@
               "text": "string"
             }
           ],
-          "fileUrlPath": "src/getAbsoluteUrl.ts",
+          "fileUrlPath": "dist/getAbsoluteUrl.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 3,
             "endIndex": 4
@@ -403,7 +403,7 @@
               "text": "string | undefined"
             }
           ],
-          "fileUrlPath": "src/getFirstStringOrString.ts",
+          "fileUrlPath": "dist/getFirstStringOrString.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 4,
             "endIndex": 5
@@ -498,7 +498,7 @@
               "text": "NormalizedQueryType"
             }
           ],
-          "fileUrlPath": "src/getNormalizedQuery.ts",
+          "fileUrlPath": "dist/getNormalizedQuery.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 15,
             "endIndex": 16
@@ -566,7 +566,7 @@
               "text": "<Leaf>"
             }
           ],
-          "fileUrlPath": "src/getObjectValueByDotSeparatedKey.ts",
+          "fileUrlPath": "dist/getObjectValueByDotSeparatedKey.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 5,
             "endIndex": 7
@@ -620,7 +620,7 @@
               "text": "string"
             }
           ],
-          "fileUrlPath": "src/getRootRelativeUrl.ts",
+          "fileUrlPath": "dist/getRootRelativeUrl.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 3,
             "endIndex": 4
@@ -661,7 +661,7 @@
               "text": "boolean"
             }
           ],
-          "fileUrlPath": "src/isNullOrWhitespace.ts",
+          "fileUrlPath": "dist/isNullOrWhitespace.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 3,
             "endIndex": 4
@@ -702,7 +702,7 @@
               "text": "string"
             }
           ],
-          "fileUrlPath": "src/replaceArabicNumeralsWithPersianNumerals.ts",
+          "fileUrlPath": "dist/replaceArabicNumeralsWithPersianNumerals.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 3,
             "endIndex": 4
@@ -743,7 +743,7 @@
               "text": "void"
             }
           ],
-          "fileUrlPath": "src/serverLog.ts",
+          "fileUrlPath": "dist/serverLog.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 3,
             "endIndex": 4
@@ -784,7 +784,7 @@
               "text": "string"
             }
           ],
-          "fileUrlPath": "src/underscoreCaseToCamelCase.ts",
+          "fileUrlPath": "dist/underscoreCaseToCamelCase.d.ts",
           "returnTypeTokenRange": {
             "startIndex": 3,
             "endIndex": 4

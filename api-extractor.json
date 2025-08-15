@@ -9,7 +9,7 @@
     "reportFolder": "<projectFolder>/api-extractor"
   },
   "compiler": {
-    "tsconfigFilePath": "tsconfig.json"
+    "tsconfigFilePath": "tsconfig-dist.json"
   },
   "docModel": {
     "enabled": true,
@@ -17,23 +17,6 @@
   },
   "dtsRollup": {
     "enabled": false
-  },
-  "messages": {
-    "compilerMessageReporting": {
-      "default": {
-        "logLevel": "warning"
-      }
-    },
-    "extractorMessageReporting": {
-      "default": {
-        "logLevel": "warning"
-      }
-    },
-    "tsdocMessageReporting": {
-      "default": {
-        "logLevel": "warning"
-      }
-    }
   },
   "tsdocMetadata": {
     "enabled": false
