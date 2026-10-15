@@ -24,6 +24,6 @@
  * @public
  */
 const getFirstStringOrString = (arrayOrString?: Array<string> | string) =>
-  Array.isArray(arrayOrString) ? arrayOrString?.[0] : arrayOrString;
+  Array.isArray(arrayOrString) ? arrayOrString[0] : arrayOrString;
 
 export default getFirstStringOrString;

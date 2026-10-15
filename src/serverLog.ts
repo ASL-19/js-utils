@@ -20,7 +20,7 @@ const serverLog = ({
   path?: string;
   statusCode?: number;
 }) => {
-  if (process && process?.env?.NODE_ENV === "test") {
+  if (typeof process !== "undefined" && process.env.NODE_ENV === "test") {
     return;
   }
 
@@ -37,7 +37,7 @@ const serverLog = ({
       : `[${getFormattedDateTime()}] `) +
     (statusCode && description
       ? `${statusCode}: ${description}`
-      : (statusCode ?? description ?? ""))
+      : String(statusCode ?? description ?? ""))
   ).trim();
 
   if (statusCode && statusCode >= 400 && statusCode < 500) {

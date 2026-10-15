@@ -1,5 +1,22 @@
 # @asl-19/js-utils changelog
 
+## Unreleased
+
+- `serverLog`: Check `typeof process` before accessing it to avoid a `ReferenceError` in browsers without a `process` global
+- Update ts-pattern to 5.9
+
+Development tooling:
+
+- Replace API Extractor and API Documenter with TypeDoc
+- Add Vitest tests for each function
+- Remove package-changed, npm-check-updates and eslint-plugin-sort-keys-fix, and add `outdated` scripts
+- Add publint, Are the Types Wrong? (`attw`) and a docs freshness check to `lint-test`
+- Manage Node.js 24 and pinact with mise
+- Add npm supply-chain gates (`.npmrc`, `devEngines`, `allowScripts`)
+- Update TypeScript to 6.0, ESLint to 10, @asl-19/eslint-config to 1.0, npm-run-all2 to 9 and Prettier to 3.9, and compile with `module: "nodenext"` and `target: "es2022"`
+- Pin GitHub Actions to commit SHAs, limit the workflow token to read-only, and run CI on pull requests
+- Add agent instructions (`AGENTS.md`) and Claude Code permission settings
+
 ## [1.0.0](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A1.0.0+is%3Aclosed) [2025-08-15]
 
 - Remove @asl-19/shared-package-configs, update configs, misc. cleanup [[#31](https://github.com/ASL-19/js-utils/pull/31)]

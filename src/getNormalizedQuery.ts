@@ -7,7 +7,7 @@ const getQueryValueString = (arrayOrString: Array<string> | string) =>
   Array.isArray(arrayOrString)
     ? // We can safely assume that a provided array will have at least one item due
       // to the way Node’s querystring.parse() works
-      arrayOrString?.[0]
+      arrayOrString[0]
     : arrayOrString;
 
 const getQueryValueArray = (arrayOrString: Array<string> | string) =>
