@@ -23,6 +23,19 @@ Description
 </th></tr></thead>
 <tbody><tr><td>
 
+[addTimestampsToConsoleMethods()](./js-utils.addtimestampstoconsolemethods.md)
+
+
+</td><td>
+
+Add timestamps to console.log, console.info, console.warn, and console.error messages.
+
+If a message already starts with a timestamp (in the format added by this function), another timestamp will not be added.
+
+
+</td></tr>
+<tr><td>
+
 [asType(value)](./js-utils.astype.md)
 
 

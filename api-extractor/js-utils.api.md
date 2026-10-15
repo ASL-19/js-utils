@@ -7,6 +7,9 @@
 import { ParsedUrlQuery } from 'querystring';
 
 // @public
+export const addTimestampsToConsoleMethods: () => void;
+
+// @public
 export const asType: <T>(value: T) => T;
 
 // @public
