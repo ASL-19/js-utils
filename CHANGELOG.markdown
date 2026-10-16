@@ -1,7 +1,8 @@
 # @asl-19/js-utils changelog
 
-## Unreleased
+## [1.1.0](https://github.com/ASL-19/js-utils/pulls?q=is%3Apr+milestone%3A1.1.0+is%3Aclosed) [2026-10-16]
 
+- Add `addTimestampsToConsoleMethods` [[#33](https://github.com/ASL-19/js-utils/pull/33)]
 - `serverLog`: Check `typeof process` before accessing it to avoid a `ReferenceError` in browsers without a `process` global
 - Update ts-pattern to 5.9
 
