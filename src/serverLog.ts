@@ -1,18 +1,4 @@
-const datePartsRegExp =
-  /(?<date>\d\d\d\d-\d\d-\d\d)T(?<hoursMinutesSeconds>\d\d:\d\d:\d\d)/;
-
-const getFormattedDateTime = () => {
-  const date = new Date();
-
-  const datePartsMatch = datePartsRegExp.exec(date.toISOString());
-
-  return datePartsMatch &&
-    typeof datePartsMatch.groups === "object" &&
-    typeof datePartsMatch.groups.date === "string" &&
-    typeof datePartsMatch.groups.hoursMinutesSeconds === "string"
-    ? `${datePartsMatch.groups.date} ${datePartsMatch.groups.hoursMinutesSeconds}`
-    : "????-??-?? ??:??:??"; // This shouldn’t ever happen!
-};
+import getFormattedDateTime from "./getFormattedDateTime.js";
 
 /**
  * Logs a formatted message based on the provided description, HTTP status code,
@@ -34,7 +20,7 @@ const serverLog = ({
   path?: string;
   statusCode?: number;
 }) => {
-  if (process && process?.env?.NODE_ENV === "test") {
+  if (typeof process !== "undefined" && process.env.NODE_ENV === "test") {
     return;
   }
 
@@ -51,7 +37,7 @@ const serverLog = ({
       : `[${getFormattedDateTime()}] `) +
     (statusCode && description
       ? `${statusCode}: ${description}`
-      : (statusCode ?? description ?? ""))
+      : String(statusCode ?? description ?? ""))
   ).trim();
 
   if (statusCode && statusCode >= 400 && statusCode < 500) {

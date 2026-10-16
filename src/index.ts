@@ -6,6 +6,7 @@
  * @packageDocumentation
  */
 
+export { default as addTimestampsToConsoleMethods } from "./addTimestampsToConsoleMethods.js";
 export { default as asType } from "./asType.js";
 export { default as cleanUrlQueryString } from "./cleanUrlQueryString.js";
 export { default as constructUrl } from "./constructUrl.js";
