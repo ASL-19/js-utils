@@ -15,6 +15,7 @@ npm run outdated         # report Node, npm package and GitHub Actions updates
 - Tests are Vitest (Node environment), in `src/*.test.ts`.
 - The Node major is set in both `mise.toml` and `package.json`'s `devEngines.runtime`; change them together.
 - Library code runs in browsers as well as Node, so don't use Node APIs in `src/` outside server-only functions like `serverLog` (and check `typeof process` before accessing `process`). Node types are available there for `serverLog` and `getNormalizedQuery`’s `ParsedUrlQuery`.
+- Don't mention projects that consume this package (by name or by description) in code comments, TSDoc, tests, commit messages, documentation or the changelog. Describe changes in terms of this package's own behaviour.
 
 ## Agent boundaries
 
